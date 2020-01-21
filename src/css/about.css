@@ -1,3 +1,35 @@
 h1 {
   color: darkgreen;
 }
+
+.header {
+  border-color:rgba(0, 0, 0, .2);
+}
+
+.header__menu-item_active > .header__menu-link {
+  color: var(--clr-black);
+}
+
+.header__menu-item::after {
+  background: var(--clr-black);
+}
+
+.for-clients {
+  padding-top: 160px;
+  padding-bottom: 94px;
+}
+
+  .for-clients__heading {
+    margin: 0;
+  }
+
+  .for-clients__text {
+    width: 815px;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 24px 0 0;
+  }
+
+  .for-clients__text :nth-of-type(1) {
+    
+  }

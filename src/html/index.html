@@ -19,35 +19,40 @@
     <section class="searching root__section">
         <div class="searching__content">
         <h1 class="heading searching__heading">Что в мире творится?</h1>
-        <p class="text searching__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+        <p class="text searching__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
         <form class="searching-form" action="#" name="search">
-            <input class="searching-form__input" type="text" name="input" placeholder="Введите слово">
+            <input class="searching-form__input" type="text" name="search-input" placeholder="Введите слово">
             <button class="button searching-form__button" type="submit" name="submitBtn">Искать</button>
         </form>
 </div>
     </section>
 
     <section class="card-list root__section">
-        <div class="waiting">
+        <div class="waiting waiting_hidden">
             <img class="waiting__spinner" src="<%=require('../img/Spinner.png').default%>" alt=""><!-- ЗАМЕНИТЬ НА GIF -->
             <p class="text waiting__text">Идет поиск новостей...</p>
         </div>
-        <div class="nothing">
+        <div class="nothing nothing_hidden">
             <img class="nothing__image" src="<%=require('../img/not-found.png').default%>" alt="">
             <h3 class="heading nothing__heading">Ничего не найдено</h3>
-            <p class="text nothing__text">К сожалению по вашему запросу ничего не найдено.</p>
+            <p class="text nothing__text">К сожалению по вашему запросу ничего не найдено.</p>
         </div>
+
+
         <div class="cards">
             <div class="cards__topline">
                 <h2 class="heading cards__heading">Результаты поиска</h2>
                 <a href="./analytics.html" class="cards__analitycs-link">
                     Посмотреть аналитику
-                    <img src="<%=require('../img/arrow-right.png').default%>" alt="" class="cards__analitycs-arrow">
+                    <img src="<%=require('../img/arrow-right.svg').default%>" alt="" class="cards__analitycs-arrow">
                 </a>
             </div>
 
             <div class="cards__container">
-                <template id="template-card" class="card">
+
+                <!-- ↓↓↓↓↓ FOR USE ↓↓↓↓↓ -->
+
+                <template id="template-card" style="display: none;" class="card">
                     <img src="" alt="" class="card__picture">
                     <p class="text card__date"></p>
                     <h3 class="card__heading"></h3>
@@ -58,10 +63,10 @@
                 <!-- FOR DEVELOPMENT -->
 
                 <div class="card">
-                    <img src="<%=require('../img/image_08.png').default%>" alt="" class="card__picture">
+                    <img src="<%=require('../img/example-image-2.jpg').default%>" alt="" class="card__picture">
                     <p class="text card__date">2 августа, 2019</p>
-                    <h3 class="card__heading">Национальное достояние – парки</h3>
-                    <p class="text card__text-content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+                            <h3 class="card__heading">Национальное достояние – парки</h3>
+                            <p class="text card__text-content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
                     <p class="card__source">Лента.ру</p>
                 </div>
                 <div class="card">
@@ -79,6 +84,13 @@
                     <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
                     <p class="card__source">Риа</p>
                 </div>
+                <div class="card">
+                    <img src="<%=require('../img/image_07.png').default%>" alt="" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                    <p class="card__source">Риа</p>
+                </div>
             </div>
             <button class="button show-more">Показать еще</button>
         </div>
@@ -86,17 +98,19 @@
 
     <section class="about root__section">
         <img src="<%=require('../img/image-03.png').default%>" alt="" class="about__face">
+        <div class="about__content">
         <h2 class="about__heading">Об авторе</h2>
         <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
         <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+    </div>
     </section>
 
     <footer class="footer root__section">
         <p class="footer__copyright">© 2019  Supersite</p>
         <ul class="footer__menu">
-            <li class="footer__menu-item"><a href="./index.html" class="footer__menu-link">Главная</a></li>
-            <li class="footer__menu-item"><a href="./about.html" class="footer__menu-link">О проекте</a></li>
-            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" class="footer__menu-link">Яндекс.Практикум</a></li>
+            <li class="footer__menu-item"><a href="./index.html" class="text footer__menu-link">Главная</a></li>
+            <li class="footer__menu-item"><a href="./about.html" class="text footer__menu-link">О проекте</a></li>
+            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" class="text footer__menu-link">Яндекс.Практикум</a></li>
         </ul>
         <ul class="footer__socials">
             <li class="footer__socials-item"><img src="<%=require('../img/github.png').default%>" alt="" class="footer__socials-icon"></li>
