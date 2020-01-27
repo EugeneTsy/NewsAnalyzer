@@ -22,15 +22,17 @@
   </div>
 
   <h2 class="heading you-asked__heading">Вы спросили: «Путешествия»</h2>
-  <p class="you-asked__stat">Новостей за неделю: <span id="newsPerWeek" class="you-asked__number">34 324</span></p>
-  <p class="you-asked__stat">Упоминаний в загаловках: <span id="menshionsInHeadings" class="you-asked__number">235</span></p>
+  <div class="you-asked__stats">
+      <p class="you-asked__stats-item">Новостей за неделю: <span id="newsPerWeek" class="you-asked__number">34 324</span></p>
+      <p class="you-asked__stats-item">Упоминаний в загаловках: <span id="menshionsInHeadings" class="you-asked__number">235</span></p>
+    </div>
 </section>
 
 <section class="analytics root__section">
   <h3 class="analytics__heading">Аналитика по дням</h3>
   <div class="graph">
     <div class="graph__headings">
-      <p class="graph__heading">Дата (август)</p>
+      <p class="graph__heading">Дата </br>(август)</p>
       <p class="graph__heading">Кол-во упоминаний</p>
     </div>
 
@@ -41,8 +43,8 @@
       <span class="graph__axis-label">75</span>
       <span class="graph__axis-label">100</span>
     </div>
-
-    <template class="graph__row">
+<div class="graph__rows">
+    <template style="display: none;" class="graph__row">
       <span class="graph__date"></span>
       <div class="graph__line"><span class="graph__value"></span></div>
     </template>
@@ -62,7 +64,7 @@
         <span class="graph__date">22, пн</span>
         <div class="graph__line"><span class="graph__value">39</span></div>
       </div>
-
+    </div>
 
     <div class="graph__x-axis">
       <span class="graph__axis-label">0</span>
@@ -79,12 +81,12 @@
   <ul class="footer__menu">
       <li class="footer__menu-item"><a href="./index.html" class="footer__menu-link">Главная</a></li>
       <li class="footer__menu-item"><a href="./about.html" class="footer__menu-link">О проекте</a></li>
-      <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" class="footer__menu-link">Яндекс.Практикум</a></li>
+      <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="footer__menu-link">Яндекс.Практикум</a></li>
   </ul>
   <ul class="footer__socials">
-      <li class="footer__socials-item"><img src="<%=require('../img/github.png').default%>" alt="" class="footer__socials-icon"></li>
-      <li class="footer__socials-item"><img src="<%=require('../img/fb.png').default%>" alt="" class="footer__socials-icon"></li>
-  </ul>
+    <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="" class="footer__socials-icon"></a></li>
+    <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li href="#">
+</ul>
 </footer>
 </body>
 </html>

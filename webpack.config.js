@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
 
-
 module.exports = {
   entry: {
      commons: './src/scripts/commons.js',
@@ -72,7 +71,7 @@ module.exports = {
       template: path.resolve(__dirname, `./src/html/about.html`),
       inject: true,
       hash: true,
-      chunks: ["commons", "about"],
+      chunks: [/*"flickity",*/ "commons", "about"],
     }),
     new HtmlWebpackPlugin({
       filename: 'analytics.html',

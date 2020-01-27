@@ -1,3 +1,5 @@
+/* @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme"; */
+
 h1 {
   color: darkgreen;
 }
@@ -11,7 +13,11 @@ h1 {
 }
 
 .header__menu-item::after {
-  background: var(--clr-black);
+  background-color: var(--clr-black);
+}
+
+.header__menu-item :hover {
+  color: var(--clr-black);
 }
 
 .for-clients {
@@ -30,6 +36,86 @@ h1 {
     margin: 24px 0 0;
   }
 
-  .for-clients__text :nth-of-type(1) {
-    
+  .stack {
+    background-color: var(--clr-light-gray);
+    padding-top: 80px;
+    padding-bottom: 88px;
+    display: grid;
+    grid-template-columns: 344px 1fr;
+    grid-column-gap: 178px;
   }
+
+  .stack__heading {
+    margin: 0;
+  }
+
+  .stack-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .stack__item {
+    display: flex;
+    flex-flow: column;
+    margin-left: 40px;
+  }
+
+  .stack__item:nth-of-type(1) {
+    margin-left: 0;
+  }
+
+  .stack__name {
+    text-align: center;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 464px 1fr;
+    grid-gap: 56px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .about__content {
+    padding: 48px 112px 0 0;
+  }
+
+
+  .cards {
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .slider__commit-group {
+    position: relative;
+    display: grid;
+    height: 288px;
+    grid-template-columns: 400px;
+    grid-auto-flow: column;
+    grid-auto-columns: 400px;
+    grid-column-gap: 16px;
+    overflow: hidden;
+  }
+
+    .slider__btn-group {
+      position: absolute;
+    }
+
+    .commit {
+      padding: 24px;
+      border-radius: 16px;
+      background-color: var(--clr-white);
+    }
+
+    .commit__name-group {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+
+    .glide__slide {
+      width: 400px;
+      background-color: var()--clr-black!important;
+    }
+

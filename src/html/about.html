@@ -6,6 +6,8 @@
     <title>About</title>
     <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../img/favicon-16x16.png').default%>">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css"> -->
 </head>
 <body>
     <header class="header root__section">
@@ -26,93 +28,139 @@
 
     <section class="stack root__section">
         <h2 class="heading stack__heading">Используемые технологии</h2>
-        <div class="stack__item">
-            <p class="text stack__name">HTML</p>
-            <img src="<%=require('../img/stack/html.png').default%>" alt="" class="stack__image">
-        </div>
-        <div class="stack__item">
-            <p class="text stack__name">CSS</p>
-            <img src="<%=require('../img/stack/css.png').default%>" alt="" class="stack__image">
-        </div>
-        <div class="stack__item">
-            <p class="text stack__name">Java Script</p>
-            <img src="<%=require('../img/stack/js.png').default%>" alt="" class="stack__image">
-        </div>
-        <div class="stack__item">
-            <p class="text stack__name">Webpack</p>
-            <img src="<%=require('../img/stack/webpack.png').default%>" alt="" class="stack__image">
-        </div>
+        <div class="stack-group">
+            <div class="stack__item">
+                <p class="text stack__name">HTML</p>
+                <img src="<%=require('../img/stack/html.png').default%>" alt="" class="stack__image">
+            </div>
+            <div class="stack__item">
+                <p class="text stack__name">CSS</p>
+                <img src="<%=require('../img/stack/css.png').default%>" alt="" class="stack__image">
+            </div>
+            <div class="stack__item">
+                <p class="text stack__name">Java Script</p>
+                <img src="<%=require('../img/stack/js.png').default%>" alt="" class="stack__image">
+            </div>
+            <div class="stack__item">
+                <p class="text stack__name">Webpack</p>
+                <img src="<%=require('../img/stack/webpack.png').default%>" alt="" class="stack__image">
+            </div>
+    </div>
     </section>
 
     <section class="about root__section">
         <img src="<%=require('../img/image-03.png').default%>" alt="" class="about__face">
-        <h2 class="about__heading">Об авторе</h2>
-        <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
-
+        <div class="about__content">
+            <h2 class="about__heading">Об авторе</h2>
+            <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+            <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+    </div>
     </section>
 
     <section class="card-list root__section">
     <div class="cards">
         <div class="cards__topline">
             <h2 class="heading cards__heading">История коммитов из GitHub</h2>
-            <div class="cards__analitycs-link">
-                <p class="cards__analitycs-text">Открыть в  Github</p>
-                <img src="<%=require('../img/arrow-right.png').default%>" alt="" class="cards__analitycs-arrow">
+            <div class="cards__topline-link">
+                <a href="https://github.com/EugeneTsy/NewsAnalyzer/commits/level-1" target="_blank" class="cards__topline-link">Открыть в  Github    
+                    <img src="<%=require('../img/arrow-right.png').default%>" alt="" class="cards__topline-arrow">
+                </a>
             </div>
         </div>
 
-        <div class="slider">
-        <template id="template-commit" class="commit">
-            <p class="commit__date"></p>
-            <div class="commit__name-group">
-                <img src="" alt="" class="commit__photo">
-                <h3 class="commit__name"></h3>
-                <p class="commit__mail"></p>
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">0</li>
+                <li class="glide__slide">1</li>
+                <li class="glide__slide">2</li>
+                <li class="glide__slide">3</li>
+                <li class="glide__slide">4</li>
+                <li class="glide__slide">5</li>
+              </ul>
             </div>
-            <p class="text commit__text-content"></p>
-        </template>
+            <button role="button" aria-label="Previous" class="glider-prev">«</button>
+            <button role="button" aria-label="Next" class="glider-next">»</button>
+          </div>
+<!-- 
+        <div class="slider glide">
+            
+            FOR DEVELOPMENT
+            <div data-glide-el="track" class="slider__commit-group glide__track">
+                <ul class="glide__slides">
+                        <template id="template-commit" class="commit"> 
+                            <p class="commit__date"></p>
+                            <div class="commit__name-group">
+                                <img src="" alt="" class="commit__photo">
+                                <h3 class="commit__name"></h3>
+                                <p class="commit__mail"></p>
+                            </div>
+                            <p class="text commit__text-content"></p>
+                        </template>
+                    <li class="commit glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__name-group">
+                            <img src="<%=require('../img/deleteThisImg01.png').default%>" alt="" class="commit__photo">
+                            <h3 class="commit__name">Антон Долинин</h3>
+                            <p class="commit__mail">anton@yandex.ru</p>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="commit glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__name-group">
+                            <img src="<%=require('../img/deleteThisImg02.png').default%>" alt="" class="commit__photo">
+                            <h3 class="commit__name">Мария Фёдорова</h3>
+                            <p class="commit__mail">mariiifed@yandex.ru</p>
+                        </div>
+                        <p class="text commit__text-content">With Emmet, you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abb...</p>
+                    </li>
+                    <li class="commit glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__name-group">
+                            <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
+                            <h3 class="commit__name">Инга Иванова</h3>
+                            <p class="commit__mail">ingaiva@yandex.ru</p>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="commit glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__name-group">
+                            <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
+                            <h3 class="commit__name">Инга Иванова</h3>
+                            <p class="commit__mail">ingaiva@yandex.ru</p>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="commit glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__name-group">
+                            <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
+                            <h3 class="commit__name">Инга Иванова</h3>
+                            <p class="commit__mail">ingaiva@yandex.ru</p>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                </ul>
+        </div > -->
 
-        <div class="slider__btn-group">
-            <img src="<%=require('../img/slider-control-left.svg').default%>" alt="" class="slider__btn-right">
-            <img src="<%=require('../img/slider-control-right.svg').default%>" alt="" class="slider__btn-right">
-        </div>
+          
 
-        <!-- FOR DEVELOPMENT -->
-        
-        <div class="commit">
-            <p class="commit__date">14 августа, 2019</p>
-            <div class="commit__name-group">
-                <img src="<%=require('../img/deleteThisImg01.png').default%>" alt="" class="commit__photo">
-                <h3 class="commit__name">Антон Долинин</h3>
-                <p class="commit__mail">anton@yandex.ru</p>
+                <!-- <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                  </div> -->
+
+              </div>
+
+             
+              
+            <div class="slider-control">
+                <div class="slider-control__dot_active"></div>
+                <div class="slider-control__dot"></div>
+                <div class="slider-control__dot"></div>
             </div>
-            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-        </div>
-        <div class="commit">
-            <p class="commit__date">14 августа, 2019</p>
-            <div class="commit__name-group">
-                <img src="<%=require('../img/deleteThisImg02.png').default%>" alt="" class="commit__photo">
-                <h3 class="commit__name">Мария Фёдорова</h3>
-                <p class="commit__mail">mariiifed@yandex.ru</p>
-            </div>
-            <p class="text commit__text-content">With Emmet, you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abb...</p>
-        </div>
-        <div class="commit">
-            <p class="commit__date">14 августа, 2019</p>
-            <div class="commit__name-group">
-                <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
-                <h3 class="commit__name">Инга Иванова</h3>
-                <p class="commit__mail">ingaiva@yandex.ru</p>
-            </div>
-            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-        </div>
-        
-        <div class="slider-control">
-            <div class="slider-control__dot_active"></div>
-            <div class="slider-control__dot"></div>
-            <div class="slider-control__dot"></div>
-        </div>
 
     </div>
 
@@ -123,12 +171,13 @@
         <ul class="footer__menu">
             <li class="footer__menu-item"><a href="./index.html" class="footer__menu-link">Главная</a></li>
             <li class="footer__menu-item"><a href="./about.html" class="footer__menu-link">О проекте</a></li>
-            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" class="footer__menu-link">Яндекс.Практикум</a></li>
+            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="footer__menu-link">Яндекс.Практикум</a></li>
         </ul>
-        <ul class="footer__socials">
-            <li class="footer__socials-item"><img src="<%=require('../img/github.png').default%>" alt="" class="footer__socials-icon"></li>
-            <li class="footer__socials-item"><img src="<%=require('../img/fb.png').default%>" alt="" class="footer__socials-icon"></li>
-        </ul>
+            <ul class="footer__socials">
+                <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="" class="footer__socials-icon"></a></li>
+                <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li href="#">
+            </ul>
     </footer>
+    <script src="../scripts/flickity.pkgd.min.js"></script>
 </body>
 </html>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../img/favicon-16x16.png').default%>">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header root__section">
@@ -17,6 +16,11 @@
     </header>
 
     <section class="searching root__section">
+        <picture class="searching__image">
+            <source class="searching__image" srcset="<%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash_768.png').default%>" media="(max-width: 768px)">
+            <source srcset="<%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash_1440.png').default%>" media="(max-width: 1440px)">
+            <img src="<%=require('../img/main-img.png').default%>" alt="">
+        </picture>
         <div class="searching__content">
         <h1 class="heading searching__heading">Что в мире творится?</h1>
         <p class="text searching__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
@@ -42,9 +46,9 @@
         <div class="cards">
             <div class="cards__topline">
                 <h2 class="heading cards__heading">Результаты поиска</h2>
-                <a href="./analytics.html" class="cards__analitycs-link">
+                <a href="./analytics.html"class="cards__topline-link">
                     Посмотреть аналитику
-                    <img src="<%=require('../img/arrow-right.svg').default%>" alt="" class="cards__analitycs-arrow">
+                    <img src="<%=require('../img/arrow-right.svg').default%>" alt="" class="cards__topline-arrow">
                 </a>
             </div>
 
@@ -99,9 +103,9 @@
     <section class="about root__section">
         <img src="<%=require('../img/image-03.png').default%>" alt="" class="about__face">
         <div class="about__content">
-        <h2 class="about__heading">Об авторе</h2>
-        <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+            <h2 class="about__heading">Об авторе</h2>
+            <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+            <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
     </div>
     </section>
 
@@ -110,11 +114,11 @@
         <ul class="footer__menu">
             <li class="footer__menu-item"><a href="./index.html" class="text footer__menu-link">Главная</a></li>
             <li class="footer__menu-item"><a href="./about.html" class="text footer__menu-link">О проекте</a></li>
-            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" class="text footer__menu-link">Яндекс.Практикум</a></li>
+            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="text footer__menu-link">Яндекс.Практикум</a></li>
         </ul>
         <ul class="footer__socials">
-            <li class="footer__socials-item"><img src="<%=require('../img/github.png').default%>" alt="" class="footer__socials-icon"></li>
-            <li class="footer__socials-item"><img src="<%=require('../img/fb.png').default%>" alt="" class="footer__socials-icon"></li>
+            <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="" class="footer__socials-icon"></a></li>
+            <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li href="#">
         </ul>
     </footer>
 </body>

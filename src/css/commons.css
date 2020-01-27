@@ -1,3 +1,13 @@
+@import "../vendor/fonts/fonts.css";
+
+@import "./header.css";
+
+@import "./footer.css";
+
+
+
+
+
 :root {
   /* Colors */
   --clr-white: #fff;
@@ -12,7 +22,6 @@
 .root__section {
   padding: 0 calc((100% - 1232px)/2);
   margin: auto;
-  /* background-color: lightgray; */
 }
 
 
@@ -23,7 +32,7 @@ body {
   background-color: var(--clr-white);
   font-family: Roboto;
   font-size: 1rem;
-  transition: all .2s;
+  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -87,89 +96,6 @@ line-height: 24px;
   background-color: var(--clr-blue-active);
 }
 
-/* Стилизация хедера */
-
-.header {
-  position: absolute;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
-  height: 80px;
-  align-items: center;
-}
-
-
-
-  .header__logo {
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  margin: 0;
-  }
-
-  .header__menu {
-    display: flex;
-    align-items: flex-end;
-    list-style: none;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  .header__menu-item {
-    box-sizing: border-box;
-    color: #B6BCBF;
-    height: 50px;
-    cursor: pointer;
-  }
-
-    .header__menu-item:last-child{
-      margin-left: 32px;
-    }
-
-  .header__menu-item::after {
-    display: block;
-    content: "";
-    width: 0%;
-    height: 3px;
-    background: var(--clr-white);
-    margin-top: 24px;;
-    transition: all ease-in-out .2s;
-  }
-
-    .header__menu-item_active::after {
-      width: 100%;
-    }
-
-
-  .header__menu-item :hover {
-    color: var(--clr-white);
-  }
-  
-  .header__menu-item:hover::after {
-    color: var(--clr-white);
-    width: 100%;
-  }
-
-
-
-  .header__menu-item_active > .header__menu-link {
-    color: var(--clr-white);
-  }
-
-    .header__menu-link {
-      font-family: Roboto;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 24px;
-      color: var(--clr-gray);
-      text-decoration: none;
-    }
-
 .heading {
 font-family: Roboto Slab;
 }
@@ -182,41 +108,45 @@ line-height: 22px;
 
 
 
-/* Стилизация футера */
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  align-items: center;
-}
-
-  .footer__copyright {
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-    line-height: 22px;
-    color: var(--clr-gray);
+  .card-list {
+    background-color: var(--clr-light-gray);
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
-
-  .footer__menu {
-    list-style: none;
-    padding: 0;
+  
+  .cards {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 44px;
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 64px;
   }
-
-    .footer__menu-link {
-      text-decoration: none;
-      color: var(--clr-black);
+  
+    .cards__topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
-  .footer__socials {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 24px;
-    list-style: none;
-  }
+  
+      .cards__heading {
+        font-size: 40px;
+        line-height: 46px;
+        margin: 0;
+      }
+  
+      .cards__topline-link {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        text-decoration: none;
+        color: var(--clr-black);
+      }
+  
+        .cards__topline-arrow {
+          position: relative;
+          top: 7px;
+          transition: all ease-in-out .15s;
+        }
+  
+        .cards__topline-link:hover .cards__topline-arrow {
+          transform: translateX(4px);
+        }
   
