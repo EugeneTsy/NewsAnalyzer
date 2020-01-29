@@ -2,11 +2,127 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Webpack</title>
-    <link rel="stylesheet" href="style.0e4338761429b4eb16ac.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsAnalyzer</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+<link href="index.0d67caf09a92636a6466.css?0219ae9d35703eea7c7c" rel="stylesheet"></head>
 <body>
-    <h1>Hello</h1>
-    <script src="main.2831a9ae57732ff6b2c2.js"></script>
-</body>
+    <header class="header root__section">
+        <p class="header__logo">NewsAnalyzer</p>
+        <ul class="header__menu">
+            <li class="header__menu-item header__menu-item_active"><a href="./index.html" class="header__menu-link">Главная</a></li>
+            <li class="header__menu-item"><a href="./about-project.html" class="header__menu-link">О проекте</a></li>
+        </ul>
+    </header>
+
+    <section class="searching root__section">
+        <picture >
+            <source srcset="
+            ./images/georgia-de-lotz--UsJoNxLaNo-unsplash.png 1x,
+            ./images/georgia-de-lotz--UsJoNxLaNo-unsplash@2x.png 2x">
+            <img class="searching__image" src="./images/main-img.png" alt="">
+        </picture>
+        <div class="searching__content">
+        <h1 class="heading searching__heading">Что в мире творится?</h1>
+        <p class="text searching__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+        <form class="searching-form" action="#" name="search">
+            <input class="searching-form__input" type="text" name="search-input" placeholder="Введите слово">
+            <button class="button searching-form__button" type="submit" name="submitBtn">Искать</button>
+        </form>
+</div>
+    </section>
+
+    <section class="card-list root__section">
+        <div class="waiting waiting_hidden">
+            <img class="waiting__spinner" src="./images/Spinner.png" alt=""><!-- ЗАМЕНИТЬ НА GIF -->
+            <p class="text waiting__text">Идет поиск новостей...</p>
+        </div>
+        <div class="nothing nothing_hidden">
+            <img class="nothing__image" src="./images/not-found.png" alt="">
+            <h3 class="heading nothing__heading">Ничего не найдено</h3>
+            <p class="text nothing__text">К сожалению по вашему запросу ничего не найдено.</p>
+        </div>
+
+
+        <div class="cards">
+            <div class="cards__topline">
+                <h2 class="heading cards__heading">Результаты поиска</h2>
+                <a href="./analytics.html" class="cards__topline-link">
+                    Посмотреть аналитику
+                    <img src="./images/arrow-right.svg" alt="" class="cards__topline-arrow">
+                </a>
+            </div>
+
+            <div class="cards__container">
+
+                <!-- ↓↓↓↓↓ FOR USE ↓↓↓↓↓ -->
+
+                <template id="template-card" style="display: none;" class="card">
+                    <img src="" alt="" class="card__picture">
+                    <p class="text card__date"></p>
+                    <h3 class="card__heading"></h3>
+                    <p class="text card__text-content"></p>
+                    <p class="card__source"></p>
+                </template>
+
+                <!-- FOR DEVELOPMENT -->
+
+                <div class="card">
+                    <img src="./images/example-image-2.jpg" alt="" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                            <h3 class="card__heading">Национальное достояние – парки</h3>
+                            <p class="text card__text-content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+                    <p class="card__source">Лента.ру</p>
+                </div>
+                <div class="card">
+                    <img src="./images/image_04.png" alt="" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">Лесные огоньки: история одной фотографии</h3>
+                    <p class="text card__text-content">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного 
+                        из местных чудес природы.</p>
+                    <p class="card__source">Медуза</p>
+                </div>
+                <div class="card">
+                    <img src="./images/image_07.png" alt="" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                    <p class="card__source">Риа</p>
+                </div>
+                <div class="card">
+                    <img src="./images/image_07.png" alt="" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                    <p class="card__source">Риа</p>
+                </div>
+            </div>
+            <button class="button show-more">Показать еще</button>
+        </div>
+    </section>
+
+    <section class="about root__section">
+        <img src="./images/image-03.png" alt="" class="about__face">
+        <div class="about__content">
+            <h2 class="about__heading">Об авторе</h2>
+            <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+            <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+    </div>
+    </section>
+
+    <footer class="footer root__section">
+        <p class="footer__copyright">© 2019  Supersite</p>
+        <ul class="footer__menu">
+            <li class="footer__menu-item"><a href="./index.html" class="text footer__menu-link">Главная</a></li>
+            <li class="footer__menu-item"><a href="./about-project.html" class="text footer__menu-link">О проекте</a></li>
+            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="text footer__menu-link">Яндекс.Практикум</a></li>
+        </ul>
+        <ul class="footer__socials">
+            <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="./images/github.svg" alt="" class="footer__socials-icon"></a></li>
+            <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="./images/fb.svg" alt="" class="footer__socials-icon"></a></li>
+        </ul>
+    </footer>
+<script type="text/javascript" src="index.e69e9a228c1e64aa142d.js?0219ae9d35703eea7c7c"></script></body>
 </html>
+
+    
