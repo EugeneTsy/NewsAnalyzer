@@ -1,0 +1,9 @@
+@import "./__text/waiting__text.css";
+
+.waiting {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: fit-content;
+  margin: 40px auto 40px;
+}

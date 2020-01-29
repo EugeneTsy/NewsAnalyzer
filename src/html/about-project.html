@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>О проекте</title>
     <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../img/favicon-16x16.png').default%>">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-    <!-- <link rel="stylesheet" href="../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css"> -->
 </head>
 <body>
     <header class="header root__section">
         <p class="header__logo">NewsAnalyzer</p>
         <ul class="header__menu">
             <li  class="header__menu-item"><a href="./index.html" class="header__menu-link">Главная</a></li>
-            <li class="header__menu-item header__menu-item_active"><a href="./about.html" class="header__menu-link">О проекте</a></li>
+            <li class="header__menu-item header__menu-item_active"><a href="./about-project.html" class="header__menu-link">О проекте</a></li>
         </ul>
     </header>
     <section class="for-clients root__section">
@@ -68,83 +65,90 @@
             </div>
         </div>
 
+        <div class="glide-container">
+
         <div class="glide">
+
             <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides">
-                <li class="glide__slide">0</li>
-                <li class="glide__slide">1</li>
-                <li class="glide__slide">2</li>
-                <li class="glide__slide">3</li>
-                <li class="glide__slide">4</li>
-                <li class="glide__slide">5</li>
+
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__person">
+                            <img src="<%=require('../img/image_07.png').default%>" alt="" class="commit__photo">
+                                <div class="commit__name-box">
+                                <h3 class="commit__name">Антон Долининов</h3>
+                                <p class="commit__mail">anton@yandex.ru</p>
+                            </div>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__person">
+                            <img src="<%=require('../img/image_07.png').default%>" alt="" class="commit__photo">
+                                <div class="commit__name-box">
+                                <h3 class="commit__name">Антон Долининов</h3>
+                                <p class="commit__mail">anton@yandex.ru</p>
+                            </div>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__person">
+                            <img src="<%=require('../img/image_07.png').default%>" alt="" class="commit__photo">
+                                <div class="commit__name-box">
+                                <h3 class="commit__name">Антон Долининов</h3>
+                                <p class="commit__mail">anton@yandex.ru</p>
+                            </div>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__person">
+                            <img src="<%=require('../img/image_07.png').default%>" alt="" class="commit__photo">
+                                <div class="commit__name-box">
+                                <h3 class="commit__name">Антон Долининов</h3>
+                                <p class="commit__mail">anton@yandex.ru</p>
+                            </div>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__person">
+                            <img src="<%=require('../img/image_07.png').default%>" alt="" class="commit__photo">
+                                <div class="commit__name-box">
+                                <h3 class="commit__name">Антон Долининов</h3>
+                                <p class="commit__mail">anton@yandex.ru</p>
+                            </div>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    <li class="glide__slide">
+                        <p class="commit__date">14 августа, 2019</p>
+                        <div class="commit__person">
+                            <img src="<%=require('../img/image_07.png').default%>" alt="" class="commit__photo">
+                                <div class="commit__name-box">
+                                <h3 class="commit__name">Антон Долининов</h3>
+                                <p class="commit__mail">anton@yandex.ru</p>
+                            </div>
+                        </div>
+                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                    </li>
+                    
+                
+
               </ul>
             </div>
-            <button role="button" aria-label="Previous" class="glider-prev">«</button>
-            <button role="button" aria-label="Next" class="glider-next">»</button>
-          </div>
-<!-- 
-        <div class="slider glide">
             
-            FOR DEVELOPMENT
-            <div data-glide-el="track" class="slider__commit-group glide__track">
-                <ul class="glide__slides">
-                        <template id="template-commit" class="commit"> 
-                            <p class="commit__date"></p>
-                            <div class="commit__name-group">
-                                <img src="" alt="" class="commit__photo">
-                                <h3 class="commit__name"></h3>
-                                <p class="commit__mail"></p>
-                            </div>
-                            <p class="text commit__text-content"></p>
-                        </template>
-                    <li class="commit glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__name-group">
-                            <img src="<%=require('../img/deleteThisImg01.png').default%>" alt="" class="commit__photo">
-                            <h3 class="commit__name">Антон Долинин</h3>
-                            <p class="commit__mail">anton@yandex.ru</p>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="commit glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__name-group">
-                            <img src="<%=require('../img/deleteThisImg02.png').default%>" alt="" class="commit__photo">
-                            <h3 class="commit__name">Мария Фёдорова</h3>
-                            <p class="commit__mail">mariiifed@yandex.ru</p>
-                        </div>
-                        <p class="text commit__text-content">With Emmet, you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abb...</p>
-                    </li>
-                    <li class="commit glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__name-group">
-                            <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
-                            <h3 class="commit__name">Инга Иванова</h3>
-                            <p class="commit__mail">ingaiva@yandex.ru</p>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="commit glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__name-group">
-                            <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
-                            <h3 class="commit__name">Инга Иванова</h3>
-                            <p class="commit__mail">ingaiva@yandex.ru</p>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="commit glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__name-group">
-                            <img src="<%=require('../img/deleteThisImg03.png').default%>" alt="" class="commit__photo">
-                            <h3 class="commit__name">Инга Иванова</h3>
-                            <p class="commit__mail">ingaiva@yandex.ru</p>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                </ul>
-        </div > -->
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+          </div>
 
+        </div>
           
 
                 <!-- <div class="glide__arrows" data-glide-el="controls">
@@ -162,20 +166,18 @@
                 <div class="slider-control__dot"></div>
             </div>
 
-    </div>
 
-    </div>
     </section>
     <footer class="footer root__section">
         <p class="footer__copyright">© 2019  Supersite</p>
         <ul class="footer__menu">
             <li class="footer__menu-item"><a href="./index.html" class="footer__menu-link">Главная</a></li>
-            <li class="footer__menu-item"><a href="./about.html" class="footer__menu-link">О проекте</a></li>
+            <li class="footer__menu-item"><a href="./about-project.html" class="footer__menu-link">О проекте</a></li>
             <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="footer__menu-link">Яндекс.Практикум</a></li>
         </ul>
             <ul class="footer__socials">
                 <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="" class="footer__socials-icon"></a></li>
-                <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li href="#">
+                <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li>
             </ul>
     </footer>
     <script src="../scripts/flickity.pkgd.min.js"></script>

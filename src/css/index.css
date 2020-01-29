@@ -1,205 +1,27 @@
+@import "./commons.css";
+
+@import "./blocks/about/about.css";
+
+@import "./blocks/searching/searching.css";
+@import "./Blocks/card-list/card-list.css";
+@import "./blocks/card-list/cards/cards.css";
+@import "./blocks/waiting/waiting.css";
+@import "./blocks/nothing/nothing.css";
+@import "./blocks/button/__show-more/button__show-more.css";
+
 .header__logo {
   color: var(--clr-white);
 }
 
-
-.searching__image > source {
-  width: 100%;
-  /* background: url('../img/main-img.png') 50% no-repeat; */
-  object-fit: cover;
-}
-
-.searching__content {
-  padding-top: 160px;
-  padding-bottom: 80px;
-  max-width: 608px;
-  margin: auto;
-  color: var(--clr-white);
-}
-
-.searching__heading {
-  margin: 0;
-}
-
-.searching__text {
-  margin: 0;
-  margin-top: 32px;
-}
-
-.searching-form {
-  margin-top: 64px;
-  position: relative;
-}
-
-.searching-form__input {
-  box-sizing: border-box;
-  height: 64px;
-  width: 100%;
-  color: var(--clr-black);
-  border: 1px solid var(--clr-gray);
-  border-radius: 32px;
-  padding-left: 24px;
-  outline: none;
-}
-
-.searching-form__input::placeholder {
-  color: var(--clr-gray);
-}
-
-.searching-form__button {
-  padding: 0 54px;
-  position: absolute;
-  right: 0;
-}
-
-
-
-  .waiting {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    width: fit-content;
-    margin: auto;
-  }
-
-  .waiting_hidden {
-    display: none;
-  }
-
-  .waiting__text {
-    text-align: center;
-    font-size: 18px;
-    line-height: 24px;
-    margin: 24px 0 0;
-    color: var(--clr-gray);
-  }
-
-
-.nothing {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  width: fit-content;
-  margin: auto;
-  max-width: 356px;
-}
-
-.nothing_hidden {
-  display: none;
-}
-
-.nothing__heading {
-  margin: 24px 0 0;
-}
-
-.nothing__text {
-  text-align: center;
-  font-size: 18px;
-  line-height: 24px;
-  margin: 16px 0 0;
-  color: var(--clr-gray);
-}
-
-
-
-
-.cards__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: row;
-  grid-gap: 16px;
-}
-
-  .card {
-    position: relative;
-    background-color: var(--clr-white);
-    border-radius: 16px;
-    padding: 16px 16px 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 576px;
-    transition: all ease-in-out .2s;
-    box-shadow: none;
-    cursor: pointer;
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 58px -24px rgba(8, 29, 45, .1);
-    transform: translateY(-4px);
-  }
-
-    .card:hover > .card__picture {
-      opacity: .8;
-    }
-
-    .card__picture {
-      width: calc(100% + 32px);
-      margin: -16px -16px 0;
-      border-radius: 16px 16px 0 0;
-      height: 272px;
-      object-fit: cover;
-      transition: all ease-in-out .2s;
-    }
-
-    .card__date {
-      color: var(--clr-gray);
-      font-size: 18px;
-      line-height: 24px;
-      margin: 20px 0 0;
-    }
-    
-    .card__heading {
-      margin: 12px 0 0;
-    }
-    
-    .card__text-content {
-      margin: 16px 0 0;
-    }
-    
-    .card__source {
-      position: absolute;
-      bottom: 24px;
-      font-family: Roboto Slab;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 20px;
-      text-transform: uppercase;
-      color: var(--clr-gray);
-      margin: 0;
-    }
-
-.show-more {
-  width: 288px;
-  margin: auto;
-  background-color: var(--clr-white);
-  color: var(--clr-black);
-  opacity: 1;
-}
-
 .show-more:hover {
   background-color: var(--clr-white);
-  opacity: .8;
+  opacity: 0.8;
 }
 
-
-
-.about {
-  display: grid;
-  grid-template-columns: 464px 1fr;
-  grid-gap: 56px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.about__content {
-  padding: 48px 112px 0 0;
-}
-
-.about__heading {
-  margin: 0;
-}
-
-.about__text {
-  margin: 24px 0 0;
+@media screen and (max-width: 1440px) {
+  /*Тут, видимо, дизайнер решил дописать текста, тк ему некрасиво было*/
+  .about__text:last-of-type::after {
+    display: block;
+    content: " Если хотите, оставьте свои контакты: email и телефон. Так заказчики смогут с вами связаться.";
+  }
 }

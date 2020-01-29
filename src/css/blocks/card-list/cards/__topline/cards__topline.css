@@ -1,0 +1,38 @@
+.cards__topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  .cards__heading {
+    margin: 0;
+  }
+
+  .cards__topline-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+    color: var(--clr-black);
+  }
+
+    .cards__topline-arrow {
+      position: relative;
+      top: 7px;
+      transition: all ease-in-out .15s;
+    }
+
+    .cards__topline-link:hover .cards__topline-arrow {
+      transform: translateX(4px);
+    }
+
+    @media screen and (max-width: 768px) {
+      .cards__topline {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+        .cards__topline-link {
+          margin-top: 16px;
+        }
+      }

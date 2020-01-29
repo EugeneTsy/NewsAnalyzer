@@ -1,0 +1,7 @@
+.button__show-more {
+  width: 288px;
+  margin: auto;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  opacity: 1;
+}

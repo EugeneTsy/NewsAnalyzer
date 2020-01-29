@@ -1,0 +1,15 @@
+@import "./__text/nothing__text.css";
+@import "./__heading/nothing__heading.css";
+
+.nothing {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  max-width: 356px;
+  margin: 40px auto 40px;
+}
+
+
+

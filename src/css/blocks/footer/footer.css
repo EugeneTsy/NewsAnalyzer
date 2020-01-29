@@ -1,0 +1,32 @@
+@import "./__copyright/footer__copyright.css";
+@import "./__menu/footer__menu.css";
+@import "./__socials/footer__socials.css";
+
+/* Стилизация футера */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1440px) {
+  .footer {
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px 32px;
+    align-items: flex-start;
+  }
+}

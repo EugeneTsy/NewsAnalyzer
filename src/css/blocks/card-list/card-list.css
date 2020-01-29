@@ -1,0 +1,16 @@
+.card-list {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--clr-light-gray);
+  transition: all ease-in-out .2s;
+  overflow: hidden;
+}
+
+
+
+@media screen and (max-width: 1440px) {
+  .card-list {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

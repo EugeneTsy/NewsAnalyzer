@@ -1,0 +1,23 @@
+.button {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  height: 64px;
+  text-align: center;
+  background-color: var(--clr-blue);
+  border: none;
+  border-radius: 32px;
+  color: var(--clr-white);
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.button:hover {
+  background-color: var(--clr-blue-hover);
+}
+
+.button:active {
+  background-color: var(--clr-blue-active);
+}

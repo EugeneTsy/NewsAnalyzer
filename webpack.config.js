@@ -8,9 +8,8 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
   entry: {
-     commons: './src/scripts/commons.js',
      index: './src/scripts/index.js',
-     about: './src/scripts/about.js',
+     about: './src/scripts/about-project.js',
      analytics: './src/scripts/analytics.js',
      },
   output: {
@@ -64,21 +63,21 @@ module.exports = {
       template: path.resolve(__dirname, `./src/html/index.html`),
       inject: true,
       hash: true,
-      chunks: ["commons", "index"],
+      chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
-      filename: 'about.html',
-      template: path.resolve(__dirname, `./src/html/about.html`),
+      filename: 'about-project.html',
+      template: path.resolve(__dirname, `./src/html/about-project.html`),
       inject: true,
       hash: true,
-      chunks: [/*"flickity",*/ "commons", "about"],
+      chunks: ["about"],
     }),
     new HtmlWebpackPlugin({
       filename: 'analytics.html',
       template: path.resolve(__dirname, `./src/html/analytics.html`),
       inject: true,
       hash: true,
-      chunks: ["commons", "analytics"],
+      chunks: ["analytics"],
     })
   ]
 };

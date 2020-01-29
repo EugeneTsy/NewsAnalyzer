@@ -1,0 +1,19 @@
+@import "./__topline/cards__topline.css";
+@import "./__container/cards__container.css";
+@import "./card/card.css";
+
+.cards {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 64px;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .card-list {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+

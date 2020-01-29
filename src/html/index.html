@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>NewsAnalyzer</title>
     <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../img/favicon-16x16.png').default%>">
 </head>
 <body>
@@ -11,15 +11,16 @@
         <p class="header__logo">NewsAnalyzer</p>
         <ul class="header__menu">
             <li class="header__menu-item header__menu-item_active"><a href="./index.html" class="header__menu-link">Главная</a></li>
-            <li class="header__menu-item"><a href="./about.html" class="header__menu-link">О проекте</a></li>
+            <li class="header__menu-item"><a href="./about-project.html" class="header__menu-link">О проекте</a></li>
         </ul>
     </header>
 
     <section class="searching root__section">
-        <picture class="searching__image">
-            <source class="searching__image" srcset="<%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash_768.png').default%>" media="(max-width: 768px)">
-            <source srcset="<%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash_1440.png').default%>" media="(max-width: 1440px)">
-            <img src="<%=require('../img/main-img.png').default%>" alt="">
+        <picture >
+            <source srcset="
+            <%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash.png').default%> 1x,
+            <%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash@2x.png').default%> 2x">
+            <img class="searching__image" src="<%=require('../img/main-img.png').default%>" alt="">
         </picture>
         <div class="searching__content">
         <h1 class="heading searching__heading">Что в мире творится?</h1>
@@ -32,11 +33,11 @@
     </section>
 
     <section class="card-list root__section">
-        <div class="waiting waiting_hidden">
+        <div class="waiting"> 
             <img class="waiting__spinner" src="<%=require('../img/Spinner.png').default%>" alt=""><!-- ЗАМЕНИТЬ НА GIF -->
             <p class="text waiting__text">Идет поиск новостей...</p>
         </div>
-        <div class="nothing nothing_hidden">
+        <div class="nothing">
             <img class="nothing__image" src="<%=require('../img/not-found.png').default%>" alt="">
             <h3 class="heading nothing__heading">Ничего не найдено</h3>
             <p class="text nothing__text">К сожалению по вашему запросу ничего не найдено.</p>
@@ -46,7 +47,7 @@
         <div class="cards">
             <div class="cards__topline">
                 <h2 class="heading cards__heading">Результаты поиска</h2>
-                <a href="./analytics.html"class="cards__topline-link">
+                <a href="./analytics.html" class="cards__topline-link">
                     Посмотреть аналитику
                     <img src="<%=require('../img/arrow-right.svg').default%>" alt="" class="cards__topline-arrow">
                 </a>
@@ -96,7 +97,7 @@
                     <p class="card__source">Риа</p>
                 </div>
             </div>
-            <button class="button show-more">Показать еще</button>
+            <button class="button button__show-more">Показать еще</button>
         </div>
     </section>
 
@@ -113,12 +114,12 @@
         <p class="footer__copyright">© 2019  Supersite</p>
         <ul class="footer__menu">
             <li class="footer__menu-item"><a href="./index.html" class="text footer__menu-link">Главная</a></li>
-            <li class="footer__menu-item"><a href="./about.html" class="text footer__menu-link">О проекте</a></li>
+            <li class="footer__menu-item"><a href="./about-project.html" class="text footer__menu-link">О проекте</a></li>
             <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="text footer__menu-link">Яндекс.Практикум</a></li>
         </ul>
         <ul class="footer__socials">
             <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="" class="footer__socials-icon"></a></li>
-            <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li href="#">
+            <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="" class="footer__socials-icon"></a></li>
         </ul>
     </footer>
 </body>

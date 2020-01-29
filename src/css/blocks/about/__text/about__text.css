@@ -1,0 +1,20 @@
+.about__text {
+  margin: 24px 0 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__text {
+    margin: 0;
+  }
+
+  .about__text:first-of-type {
+    margin: 16px 0 0;
+  }
+
+  /*Тут, видимо, дизайнер решил дописать текста, тк ему некрасиво было*/
+  .about__text:last-of-type::after {
+    display: block;
+    content: " Если хотите, оставьте свои контакты: email и телефон. Так заказчики смогут с вами связаться.";
+  }
+}
+
