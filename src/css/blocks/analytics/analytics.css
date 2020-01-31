@@ -1,0 +1,23 @@
+@import "./__heading/analytics__heading.css";
+
+.analytics {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--clr-light-gray);
+}
+
+
+@media screen and (max-width: 1440px) {
+
+  .analytics {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .analytics {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+}

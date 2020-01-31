@@ -1,7 +1,7 @@
 @import "./normalize.css";
 @import "../vendor/fonts/fonts.css";
+@import "./blocks/root/root.css";
 
-@import "./Blocks/root/root.css";
 @import "./blocks/header/header.css";
 @import "./blocks/footer/footer.css";
 @import "./blocks/button/button.css";

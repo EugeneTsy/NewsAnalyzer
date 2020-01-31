@@ -1,0 +1,30 @@
+@import "./__heading/stack__heading.css";
+@import "./__group/stack__group.css";
+@import "./__item/stack__item.css";
+@import "./__name/stack__name.css";
+
+.stack {
+  background-color: var(--clr-light-gray);
+  padding-top: 80px;
+  padding-bottom: 88px;
+  display: grid;
+  grid-template-columns: 344px 1fr;
+  grid-column-gap: 178px;
+}
+
+@media screen and (max-width: 1440px) {
+
+  .stack {
+    grid-template-columns: 336px 1fr; 
+    grid-column-gap: 0; 
+    grid-row-gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .stack {
+    grid-template-columns: 100%; 
+    padding-top: 32px;
+  }
+}

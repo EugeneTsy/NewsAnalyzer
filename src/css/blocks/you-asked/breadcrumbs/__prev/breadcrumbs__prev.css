@@ -1,0 +1,6 @@
+.breadcrumbs__prev {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--clr-black);
+}

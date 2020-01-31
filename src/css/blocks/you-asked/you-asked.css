@@ -1,0 +1,30 @@
+
+  @import "./breadcrumbs/breadcrumbs.css";
+  @import "./__heading/you-asked__heading.css";
+  @import "./__stats/you-asked__stats.css";
+  @import "./__stats/you-asked__stats-item.css";
+  @import "./__number/you-asked__number.css";
+  
+  .you-asked {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: 712px;
+    transition: all ease-in-out .2s;
+  }
+
+  @media screen and (max-width: 1440px) {
+    .you-asked {
+      grid-template-columns: 100%;
+      padding-top: 96px;
+      padding-bottom: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .you-asked {
+      grid-template-columns: 100%;
+      padding-top: 72px;
+      padding-bottom: 24px;
+    }
+  }

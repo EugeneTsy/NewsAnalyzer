@@ -1,0 +1,9 @@
+.graph__axis-label {
+  font-size: 12px;
+  line-height: 16px;
+  height: 20px;
+  text-align: center;
+  letter-spacing: 0.4px;
+  color: var(--clr-gray);
+  text-transform: uppercase;
+}

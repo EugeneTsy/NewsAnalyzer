@@ -26,6 +26,10 @@
       transform: translateX(4px);
     }
 
+    .cards__button {
+      display: none;
+    }
+
     @media screen and (max-width: 768px) {
       .cards__topline {
         flex-direction: column;
@@ -33,6 +37,26 @@
       }
     
         .cards__topline-link {
-          margin-top: 16px;
+          display: none;
+        }
+
+        .cards__button > .cards__topline-link {
+          position: relative;
+          display: block;
+          margin: auto;
+          bottom: 2px;
+        }
+
+        .cards__button > .cards__topline-link .cards__topline-arrow {
+          display: none;
+        }
+
+        .cards__button {
+          display: block;
+          grid-row: 3/4;
+          height: 56px;
+          border: 1px solid var(--clr-black);
+          border-radius: 28px;
+          background-color: transparent;
         }
       }

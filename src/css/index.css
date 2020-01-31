@@ -3,7 +3,7 @@
 @import "./blocks/about/about.css";
 
 @import "./blocks/searching/searching.css";
-@import "./Blocks/card-list/card-list.css";
+@import "./blocks/card-list/card-list.css";
 @import "./blocks/card-list/cards/cards.css";
 @import "./blocks/waiting/waiting.css";
 @import "./blocks/nothing/nothing.css";

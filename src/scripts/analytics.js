@@ -1,2 +1,2 @@
-import '../css/analytics.css';
+import '../css/analytics-page.css';
 

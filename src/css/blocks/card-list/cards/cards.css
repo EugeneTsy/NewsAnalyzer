@@ -1,9 +1,10 @@
-@import "./__topline/cards__topline.css";
 @import "./__container/cards__container.css";
+@import "./__topline/cards__topline.css";
 @import "./card/card.css";
 
 .cards {
   display: grid;
+  grid-template-columns: 100%;
   grid-template-rows: repeat(3, auto);
   grid-row-gap: 64px;
 }

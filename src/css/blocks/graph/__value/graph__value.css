@@ -1,0 +1,11 @@
+.graph__value {
+  margin-left: 8px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: bold;
+  vertical-align: middle;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--clr-white);
+}
