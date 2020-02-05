@@ -3,5 +3,12 @@
   margin: auto;
   background-color: var(--clr-white);
   color: var(--clr-black);
-  opacity: 1;
+}
+
+.button__show-more:hover {
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.button__show-more:active {
+  background-color: rgba(255, 255, 255, .4);
 }

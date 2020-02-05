@@ -1,5 +1,7 @@
 @import "./commons.css";
 
+
+@import "./blocks/header/header_black.css";
 @import "./blocks/card-list/card-list.css";
 @import "./blocks/about/about.css";
 @import "./blocks/header/header_black.css";

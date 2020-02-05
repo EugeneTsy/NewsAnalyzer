@@ -1,6 +1,8 @@
 @import "./__copyright/footer__copyright.css";
 @import "./__menu/footer__menu.css";
+@import "./__menu-link/footer__menu-link.css";
 @import "./__socials/footer__socials.css";
+@import "./__socials/footer__socials-item.css";
 
 /* Стилизация футера */
 

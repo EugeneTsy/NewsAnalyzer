@@ -9,12 +9,6 @@
     grid-gap: 44px;
   }
 
-    .footer__menu-link {
-      font-size: 18px;
-      line-height: 24px;
-      text-decoration: none;
-      color: var(--clr-black);
-    }
 
 @media screen and (max-width: 1440px) {
   .footer__menu {

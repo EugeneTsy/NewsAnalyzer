@@ -1,8 +1,10 @@
 .header__logo {
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
+  text-decoration: none;
+  color: var(--clr-white);
   line-height: 24px;
   margin: 0;
 }

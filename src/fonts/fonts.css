@@ -1,0 +1,56 @@
+
+/* roboto-regular - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('./Roboto/roboto-v20-latin_cyrillic-ext_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./Roboto/roboto-v20-latin_cyrillic-ext_cyrillic-regular.woff') format('woff')
+}
+/* roboto-500 - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('./Roboto/roboto-v20-latin_cyrillic-ext_cyrillic-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./Roboto/roboto-v20-latin_cyrillic-ext_cyrillic-500.woff') format('woff')
+}
+/* roboto-700 - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('./Roboto/roboto-v20-latin_cyrillic-ext_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./Roboto/roboto-v20-latin_cyrillic-ext_cyrillic-700.woff') format('woff')
+}
+
+/* roboto-slab-regular - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('./Roboto Slab/roboto-slab-v10-latin_cyrillic-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./Roboto Slab/roboto-slab-v10-latin_cyrillic-ext-regular.woff') format('woff')
+}
+/* roboto-slab-500 - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('./Roboto Slab/roboto-slab-v10-latin_cyrillic-ext-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./Roboto Slab/roboto-slab-v10-latin_cyrillic-ext-500.woff') format('woff')
+}
+/* roboto-slab-700 - latin_cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('./Roboto Slab/roboto-slab-v10-latin_cyrillic-ext-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./Roboto Slab/roboto-slab-v10-latin_cyrillic-ext-700.woff') format('woff')
+}

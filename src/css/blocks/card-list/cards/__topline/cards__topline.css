@@ -28,7 +28,18 @@
 
     .cards__button {
       display: none;
+      grid-row: 3/4;
+      height: 56px;
+      border: 1px solid var(--clr-black);
+      border-radius: 28px;
+      background-color: transparent;
     }
+
+    .cards__button:hover {
+      background-color: var(--clr-white);
+    }
+
+    
 
     @media screen and (max-width: 768px) {
       .cards__topline {
@@ -37,6 +48,9 @@
       }
     
         .cards__topline-link {
+          margin-top: 16px;
+        }
+        .cards__topline-link_hide {
           display: none;
         }
 
@@ -53,10 +67,5 @@
 
         .cards__button {
           display: block;
-          grid-row: 3/4;
-          height: 56px;
-          border: 1px solid var(--clr-black);
-          border-radius: 28px;
-          background-color: transparent;
         }
       }

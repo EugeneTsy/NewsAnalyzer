@@ -16,7 +16,7 @@
   display: none;
 }
 
-.root__section {
+.root-section {
   padding: 0 calc((100% - 1232px)/2);
   margin: auto;
 }
@@ -25,7 +25,7 @@ body {
   position: relative;
   color: var(--clr-black);
   background-color: var(--clr-white);
-  font-family: Roboto;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +36,7 @@ body {
 }
 
 h1 {
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Georgia, 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: normal;
   font-size: 60px;
@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-font-family: Roboto Slab;
+font-family: Roboto Slab, Georgia, 'Times New Roman', Times, serif;
 font-style: normal;
 font-weight: normal;
 font-size: 40px;
@@ -52,7 +52,7 @@ line-height: 46px;
 }
 
 h3 {
-font-family: Roboto Slab;
+font-family: Roboto Slab, Georgia, 'Times New Roman', Times, serif;
 font-style: normal;
 font-weight: normal;
 font-size: 26px;
@@ -60,11 +60,11 @@ line-height: 30px;
 }
 
 .heading {
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Georgia, 'Times New Roman', Times, serif;
 }
 
 .text {
-font-family: Roboto;
+font-family: Roboto, Arial, Helvetica, sans-serif;
 font-style: normal;
 font-weight: normal;
 font-size: 18px;
@@ -74,7 +74,7 @@ line-height: 24px;
 
 
 @media screen and (max-width: 1440px) {
-  .root__section {
+  .root-section {
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -96,7 +96,7 @@ line-height: 24px;
 }
 
 @media screen and (max-width: 768px) {
-  .root__section {
+  .root-section {
     padding-left: 16px;
     padding-right: 16px;
   }

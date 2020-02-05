@@ -9,10 +9,6 @@
 @import "./blocks/nothing/nothing.css";
 @import "./blocks/button/__show-more/button__show-more.css";
 
-.header__logo {
-  color: var(--clr-white);
-}
-
 .show-more:hover {
   background-color: var(--clr-white);
   opacity: 0.8;

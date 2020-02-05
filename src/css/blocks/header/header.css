@@ -3,11 +3,6 @@
 @import "./__menu-item/header__menu-item.css";
 @import "./__menu-link/header__menu-link.css";
 
-@media screen and (max-width: 1440px) {
-}
-@media screen and (max-width: 768px) {
-}
-
 .header {
   position: absolute;
   top: 0;
@@ -32,3 +27,5 @@
     height: 56px;
   }
 }
+
+

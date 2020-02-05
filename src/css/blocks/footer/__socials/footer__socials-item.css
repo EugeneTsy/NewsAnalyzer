@@ -1,0 +1,13 @@
+.footer__socials-item {
+  transition: all .2s;
+}
+
+.footer__socials-item:hover  {
+  opacity: .6;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__socials {
+    justify-content: flex-end;
+  }
+}

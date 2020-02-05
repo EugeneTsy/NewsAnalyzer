@@ -5,7 +5,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
-
 module.exports = {
   entry: {
      index: './src/scripts/index.js',
@@ -14,13 +13,18 @@ module.exports = {
      },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: 'scripts/[name].[chunkhash].js'
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: (resourcePath, context) => path.relative(path.dirname(resourcePath), context) + '/dist/',
+          },
+        }, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.js$/,
@@ -41,13 +45,13 @@ module.exports = {
        },
        {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]'
+        loader: 'file-loader?name=./fonts/[name].[ext]'
         },
     ]
   },
   plugins: [ 
     new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css'
+        filename: 'styles/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,

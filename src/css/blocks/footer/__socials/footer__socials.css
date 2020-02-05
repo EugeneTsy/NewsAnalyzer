@@ -5,14 +5,8 @@
   list-style: none;
 }
 
+
 .footer__socials-item:last-of-type {
   margin-left: 24px;
 }
 
-@media screen and (max-width: 1440px) {
-}
-@media screen and (max-width: 768px) {
-  .footer__socials {
-    justify-content: flex-end;
-  }
-}
