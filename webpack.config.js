@@ -5,6 +5,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
+
+
 module.exports = {
   entry: {
      index: './src/scripts/index.js',
@@ -22,7 +24,7 @@ module.exports = {
         use: [{
           loader: MiniCssExtractPlugin.loader,
           options: {
-            publicPath: (resourcePath, context) => path.relative(path.dirname(resourcePath), context) + '/dist/',
+            publicPath: '../',
           },
         }, 'css-loader', 'postcss-loader'],
       },
