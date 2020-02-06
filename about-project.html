@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О проекте</title>
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-<link href="about.fee0a4c4af918403cdd8.css?9bcc0204682df6b3e7eb" rel="stylesheet"></head>
+<link href="styles/about.815bbef02482c7075bf7.css?7fb7b69214e1b9faa896" rel="stylesheet"></head>
 <body>
-    <header class="header root__section">
-        <p class="header__logo">NewsAnalyzer</p>
+    <header class="header root-section">
+        <a  href="./index.html" class="header__logo">NewsAnalyzer</a>
         <ul class="header__menu">
             <li  class="header__menu-item"><a href="./index.html" class="header__menu-link">Главная</a></li>
             <li class="header__menu-item header__menu-item_active"><a href="./about-project.html" class="header__menu-link">О проекте</a></li>
         </ul>
     </header>
-    <section class="for-clients root__section">
+    <section class="for-clients root-section">
         <h2 class="heading for-clients__heading">Клиентам</h2>
         <p class="text for-clients__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
         <p class="text for-clients__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
@@ -23,30 +23,35 @@
         <p class="text for-clients__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
     </section>
 
-    <section class="stack root__section">
+    <section class="stack root-section">
         <h2 class="heading stack__heading">Используемые технологии</h2>
-        <div class="stack-group">
+        <div class="stack__group">
             <div class="stack__item">
                 <p class="text stack__name">HTML</p>
-                <img src="./images/html.png" alt="" class="stack__image">
+                <img src="./images/html.svg" alt="Лого HTML" fill="#fff" class="stack__image">
             </div>
             <div class="stack__item">
                 <p class="text stack__name">CSS</p>
-                <img src="./images/css.png" alt="" class="stack__image">
+                <img src="./images/css.svg" alt="Лого CSS" class="stack__image">
             </div>
             <div class="stack__item">
                 <p class="text stack__name">Java Script</p>
-                <img src="./images/js.png" alt="" class="stack__image">
+                <img src="./images/js.svg" alt="Лого JS" class="stack__image">
             </div>
             <div class="stack__item">
                 <p class="text stack__name">Webpack</p>
-                <img src="./images/webpack.png" alt="" class="stack__image">
+                <img src="./images/webpack.svg" alt="Лого Webpack" class="stack__image">
             </div>
     </div>
     </section>
 
-    <section class="about root__section">
-        <img src="./images/image-03.png" alt="" class="about__face">
+    <section class="about root-section">
+        <picture>
+            <source srcset="
+            ./images/Avatar.png 1x,
+            ./images/Avatar@2x.png 2x">
+        <img src="./images/Avatar.png" alt="Фото разработчика" class="about__face">
+        </picture>
         <div class="about__content">
             <h2 class="about__heading">Об авторе</h2>
             <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
@@ -54,132 +59,134 @@
     </div>
     </section>
 
-    <section class="card-list root__section">
+    <section class="card-list root-section">
     <div class="cards">
         <div class="cards__topline">
             <h2 class="heading cards__heading">История коммитов из GitHub</h2>
-            <div class="cards__topline-link">
-                <a href="https://github.com/EugeneTsy/NewsAnalyzer/commits/level-1" target="_blank" class="cards__topline-link">Открыть в  Github    
-                    <img src="./images/arrow-right.png" alt="" class="cards__topline-arrow">
-                </a>
-            </div>
+            <a href="https://github.com/EugeneTsy/NewsAnalyzer/commits/level-1" target="_blank" class="cards__topline-link cards__topline-link_hide">Открыть в  Github    
+                <img src="./images/arrow-right.svg" alt="Стрелка" class="cards__topline-arrow">
+            </a>
         </div>
 
         <div class="glide-container">
 
-        <div class="glide">
+            <div class="glide">
 
-            <div class="glide__track" data-glide-el="track">
+                <div class="glide__track" data-glide-el="track">
 
-                <ul class="glide__slides">
-                    <li class="glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__person">
-                            <img src="./images/image_07.png" alt="" class="commit__photo">
-                                <div class="commit__name-box">
-                                <h3 class="commit__name">Антон Долининов</h3>
-                                <p class="commit__mail">anton@yandex.ru</p>
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="./images/image_07.png" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__person">
-                            <img src="./images/image_07.png" alt="" class="commit__photo">
-                                <div class="commit__name-box">
-                                <h3 class="commit__name">Антон Долининов</h3>
-                                <p class="commit__mail">anton@yandex.ru</p>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="./images/image_07.png" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__person">
-                            <img src="./images/image_07.png" alt="" class="commit__photo">
-                                <div class="commit__name-box">
-                                <h3 class="commit__name">Антон Долининов</h3>
-                                <p class="commit__mail">anton@yandex.ru</p>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="./images/image_07.png" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__person">
-                            <img src="./images/image_07.png" alt="" class="commit__photo">
-                                <div class="commit__name-box">
-                                <h3 class="commit__name">Антон Долининов</h3>
-                                <p class="commit__mail">anton@yandex.ru</p>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="./images/image_07.png" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__person">
-                            <img src="./images/image_07.png" alt="" class="commit__photo">
-                                <div class="commit__name-box">
-                                <h3 class="commit__name">Антон Долининов</h3>
-                                <p class="commit__mail">anton@yandex.ru</p>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="./images/image_07.png" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <p class="commit__date">14 августа, 2019</p>
-                        <div class="commit__person">
-                            <img src="./images/image_07.png" alt="" class="commit__photo">
-                                <div class="commit__name-box">
-                                <h3 class="commit__name">Антон Долининов</h3>
-                                <p class="commit__mail">anton@yandex.ru</p>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="./images/image_07.png" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                    </li>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        
                     
+
+                </ul>
+                </div>
                 
-
-              </ul>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button id="slideBack" class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        <img src="./images/slider-control-left.svg" alt="Назад">
+                    </button>
+                    <button id="slideForward" class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        <img src="./images/slider-control-right.svg" alt="Вперед">
+                    </button>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet" data-glide-dir="=3"></button>
+                    <button class="glide__bullet" data-glide-dir="=4"></button>
+                </div>
             </div>
-            
-            <button aria-label="Previous" class="glider-prev">«</button>
-            <button aria-label="Next" class="glider-next">»</button>
-          </div>
-
         </div>
-          
 
-                <!-- <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-                  </div> -->
-
-              </div>
+        <button class="button cards__button">
+            <a href="https://github.com/EugeneTsy/NewsAnalyzer/commits/level-1" target="_blank" class="cards__topline-link">Открыть в  Github    
+                <img src="./images/arrow-right.svg" alt="Стрелка" class="cards__topline-arrow">
+            </a>
+        </button>
 
              
               
-            <div class="slider-control">
-                <div class="slider-control__dot_active"></div>
-                <div class="slider-control__dot"></div>
-                <div class="slider-control__dot"></div>
-            </div>
 
 
     </section>
-    <footer class="footer root__section">
-        <p class="footer__copyright">© 2019  Supersite</p>
+    <footer class="footer root-section">
+        <p class="footer__copyright">© 2019  Tsy</p>
         <ul class="footer__menu">
             <li class="footer__menu-item"><a href="./index.html" class="footer__menu-link">Главная</a></li>
             <li class="footer__menu-item"><a href="./about-project.html" class="footer__menu-link">О проекте</a></li>
             <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="footer__menu-link">Яндекс.Практикум</a></li>
         </ul>
             <ul class="footer__socials">
-                <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="./images/github.svg" alt="" class="footer__socials-icon"></a></li>
-                <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="./images/fb.svg" alt="" class="footer__socials-icon"></a></li>
+                <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="./images/github.svg" alt="Лого гитхаб" class="footer__socials-icon"></a></li>
+                <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="./images/fb.svg" alt="Лого фейсбук" class="footer__socials-icon"></a></li>
             </ul>
     </footer>
-    <script src="../scripts/flickity.pkgd.min.js"></script>
-<script type="text/javascript" src="about.aa6011be800c57ae3922.js?9bcc0204682df6b3e7eb"></script></body>
+<script type="text/javascript" src="scripts/about.a071ff99334c45253682.js?7fb7b69214e1b9faa896"></script></body>
 </html>
