@@ -1,0 +1,7 @@
+
+.card__date {
+  color: var(--clr-gray);
+  font-size: 18px;
+  line-height: 24px;
+  margin: 20px 0 0;
+}

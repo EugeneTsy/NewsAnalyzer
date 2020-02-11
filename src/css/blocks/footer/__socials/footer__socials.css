@@ -1,0 +1,12 @@
+.footer__socials {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+.footer__socials-item:last-of-type {
+  margin-left: 24px;
+}
+

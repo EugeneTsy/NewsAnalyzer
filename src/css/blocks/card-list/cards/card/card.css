@@ -1,0 +1,36 @@
+
+@import "./__picture/card__picture.css";
+@import "./__date/card__date.css";
+@import "./__heading/card__heading.css";
+@import "./__text-content/card__text-content.css";
+@import "./__source/card__source.css";
+
+
+.card {
+  position: relative;
+  background-color: var(--clr-white);
+  border-radius: 16px;
+  padding: 16px 16px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 576px;
+  transition: all ease-in-out 0.2s;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 8px 58px -24px rgba(8, 29, 45, 0.1);
+  transform: translateY(-4px);
+}
+
+.card:hover > .card__picture {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1440px) {
+    .cards {
+      grid-row-gap: 32px;
+    }
+}

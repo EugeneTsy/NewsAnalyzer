@@ -1,0 +1,10 @@
+
+  .you-asked__stats-item {
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .you-asked__stats-item + .you-asked__stats-item {
+    margin-top: 4px;
+  }

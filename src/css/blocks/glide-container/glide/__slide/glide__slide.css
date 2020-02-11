@@ -1,0 +1,13 @@
+
+.glide__slide {
+  background-color: var(--clr-white);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all ease-in-out 0.2s;
+}
+
+.glide__slide:hover {
+  cursor: pointer;
+  box-shadow: var(--shdw-card-hover);
+  transform: translateY(-4px);
+}

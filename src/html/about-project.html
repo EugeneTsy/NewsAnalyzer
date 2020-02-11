@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../img/favicon-16x16.png').default%>">
+</head>
+<body>
+    <header class="header root-section">
+        <a  href="./index.html" class="header__logo">NewsAnalyzer</a>
+        <ul class="header__menu">
+            <li  class="header__menu-item"><a href="./index.html" class="header__menu-link">Главная</a></li>
+            <li class="header__menu-item header__menu-item_active"><a href="./about-project.html" class="header__menu-link">О проекте</a></li>
+        </ul>
+    </header>
+    <section class="for-clients root-section">
+        <h2 class="heading for-clients__heading">Клиентам</h2>
+        <p class="text for-clients__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
+        <p class="text for-clients__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
+        <p class="text for-clients__text">Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.</p>
+        <p class="text for-clients__text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
+        <p class="text for-clients__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
+    </section>
+
+    <section class="stack root-section">
+        <h2 class="heading stack__heading">Используемые технологии</h2>
+        <div class="stack__group">
+            <div class="stack__item">
+                <p class="text stack__name">HTML</p>
+                <img src="<%=require('../img/stack/html.svg').default%>" alt="Лого HTML" fill="#fff" class="stack__image">
+            </div>
+            <div class="stack__item">
+                <p class="text stack__name">CSS</p>
+                <img src="<%=require('../img/stack/css.svg').default%>" alt="Лого CSS" class="stack__image">
+            </div>
+            <div class="stack__item">
+                <p class="text stack__name">Java Script</p>
+                <img src="<%=require('../img/stack/js.svg').default%>" alt="Лого JS" class="stack__image">
+            </div>
+            <div class="stack__item">
+                <p class="text stack__name">Webpack</p>
+                <img src="<%=require('../img/stack/webpack.svg').default%>" alt="Лого Webpack" class="stack__image">
+            </div>
+    </div>
+    </section>
+
+    <section class="about root-section">
+        <picture>
+            <source srcset="
+            <%=require('../img/Avatar.png').default%> 1x,
+            <%=require('../img/Avatar@2x.png').default%> 2x">
+        <img src="<%=require('../img/Avatar.png').default%>" alt="Фото разработчика" class="about__face">
+        </picture>
+        <div class="about__content">
+            <h2 class="about__heading">Об авторе</h2>
+            <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+            <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+    </div>
+    </section>
+
+    <section class="card-list root-section">
+    <div class="cards">
+        <div class="cards__topline">
+            <h2 class="heading cards__heading">История коммитов из GitHub</h2>
+            <a href="https://github.com/EugeneTsy/NewsAnalyzer/commits/level-1" target="_blank" class="cards__topline-link cards__topline-link_hide">Открыть в  Github    
+                <img src="<%=require('../img/arrow-right.svg').default%>" alt="Стрелка" class="cards__topline-arrow">
+            </a>
+        </div>
+
+        <div class="glide-container">
+
+            <div class="glide">
+
+                <div class="glide__track" data-glide-el="track">
+
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="<%=require('../img/image_07.png').default%>" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="<%=require('../img/image_07.png').default%>" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="<%=require('../img/image_07.png').default%>" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="<%=require('../img/image_07.png').default%>" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="<%=require('../img/image_07.png').default%>" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="commit__date">14 августа, 2019</p>
+                            <div class="commit__person">
+                                <img src="<%=require('../img/image_07.png').default%>" alt="Аватарка автора коммита" class="commit__photo">
+                                    <div class="commit__name-box">
+                                    <h3 class="commit__name">Антон Долининов</h3>
+                                    <p class="commit__mail">anton@yandex.ru</p>
+                                </div>
+                            </div>
+                            <p class="text commit__text-content">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
+                        </li>
+                        
+                    
+
+                </ul>
+                </div>
+                
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button id="slideBack" class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        <img src="<%=require('../img/slider-control-left.svg').default%>" alt="Назад">
+                    </button>
+                    <button id="slideForward" class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        <img src="<%=require('../img/slider-control-right.svg').default%>" alt="Вперед">
+                    </button>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet" data-glide-dir="=3"></button>
+                    <button class="glide__bullet" data-glide-dir="=4"></button>
+                </div>
+            </div>
+        </div>
+
+        <button class="button cards__button">
+            <a href="https://github.com/EugeneTsy/NewsAnalyzer/commits/level-1" target="_blank" class="cards__topline-link">Открыть в  Github    
+                <img src="<%=require('../img/arrow-right.svg').default%>" alt="Стрелка" class="cards__topline-arrow">
+            </a>
+        </button>
+
+             
+              
+
+
+    </section>
+    <footer class="footer root-section">
+        <p class="footer__copyright">© 2019  Tsy</p>
+        <ul class="footer__menu">
+            <li class="footer__menu-item"><a href="./index.html" class="footer__menu-link">Главная</a></li>
+            <li class="footer__menu-item"><a href="./about-project.html" class="footer__menu-link">О проекте</a></li>
+            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="footer__menu-link">Яндекс.Практикум</a></li>
+        </ul>
+            <ul class="footer__socials">
+                <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="Лого гитхаб" class="footer__socials-icon"></a></li>
+                <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="Лого фейсбук" class="footer__socials-icon"></a></li>
+            </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.header {
+  border-color:rgba(0, 0, 0, .2);
+}
+
+.header > .header__logo {
+  color: var(--clr-black);
+}
+
+.header__menu-item_active > .header__menu-link {
+  color: var(--clr-black);
+}
+
+.header__menu-item :hover {
+  color: var(--clr-black);
+}
+
+.header__menu-item_active {
+  border-color: var(--clr-black);
+}

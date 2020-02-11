@@ -1,0 +1,11 @@
+@import "./commons.css";
+
+
+@import "./blocks/header/header_black.css";
+@import "./blocks/card-list/card-list.css";
+@import "./blocks/about/about.css";
+@import "./blocks/header/header_black.css";
+@import "./blocks/for-clients/for-clients.css";
+@import "./blocks/stack/stack.css";
+@import "./blocks/glide-container/glide-container.css";
+@import "./blocks/commit/commit.css";

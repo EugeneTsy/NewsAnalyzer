@@ -1,0 +1,18 @@
+.about__face {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1440px) {
+  .about__face {
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__face {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,29 @@
+@import "./__face/about__face.css";
+@import "./__content/about__content.css";
+@import "./__heading/about__heading.css";
+@import "./__text/about__text.css";
+
+.about {
+  display: grid;
+  grid-template-columns: 464px 1fr;
+  grid-gap: 56px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1440px) {
+  .about {
+    display: grid;
+    grid-template-columns: minmax(232px, 35%) 1fr;
+    grid-gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    grid-template: 1fr / auto;
+    padding-top: 24px;
+  }
+}

@@ -1,0 +1,14 @@
+.button__show-more {
+  width: 288px;
+  margin: auto;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+}
+
+.button__show-more:hover {
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.button__show-more:active {
+  background-color: rgba(255, 255, 255, .4);
+}

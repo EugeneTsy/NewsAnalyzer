@@ -1,0 +1,31 @@
+.header__menu-item {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--clr-light-gray);
+  height: 100%;
+}
+
+.header__menu-item:last-child {
+  margin-left: 32px;
+}
+
+.header__menu-item :hover {
+  color: var(--clr-white);
+}
+
+.header__menu-item_active {
+  border-bottom: 3px solid var(--clr-white);
+}
+
+.header__menu-item_active > .header__menu-link {
+  color: var(--clr-white);
+  position: relative;
+  top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .header__menu-item:last-child {
+    margin-left: 12px;
+  }
+}

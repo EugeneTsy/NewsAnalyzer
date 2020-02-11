@@ -1,0 +1,25 @@
+@import "./__heading/for-clients__heading.css";
+@import "./__text/for-clients__text.css";
+
+.for-clients {
+  display: grid;
+  grid-template-columns: 815px;
+  padding-top: 160px;
+  padding-bottom: 94px;
+  transition: all ease-in-out .2s;
+}
+
+@media screen and (max-width: 1440px) {
+  .for-clients {
+    padding-top: 96px;
+    padding-bottom: 24px;
+    grid-template-columns: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .for-clients {
+    padding-top: 72px;
+    padding-bottom: 16px;
+  }
+}

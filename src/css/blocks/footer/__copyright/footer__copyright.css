@@ -1,0 +1,17 @@
+.footer__copyright {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--clr-gray);
+}
+
+
+
+
+@media screen and (max-width: 1440px) {}
+@media screen and (max-width: 768px) {
+  .footer__copyright {
+    order: 3;
+  }
+}

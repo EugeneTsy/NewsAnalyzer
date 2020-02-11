@@ -1,0 +1,13 @@
+@import "./__prev/breadcrumbs__prev.css";
+@import "./__present/breadcrumbs__present.css";
+  
+  
+  .breadcrumbs {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .breadcrumbs {
+      display: none;
+    }
+  }

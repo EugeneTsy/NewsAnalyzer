@@ -1,0 +1,12 @@
+.graph__x-axis {
+  grid-column: 2/3;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width: 768px) {
+  .graph__x-axis {
+    display: none;
+  }
+}

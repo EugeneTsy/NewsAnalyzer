@@ -1,0 +1,18 @@
+
+  .stack__item {
+    display: flex;
+    flex-flow: column;
+    margin-left: 40px;
+  }
+
+  .stack__item:nth-of-type(1) {
+    margin-left: 0;
+  }
+
+
+  @media screen and (max-width: 1440px) {
+
+    .stack__item {
+      margin: 0;
+    }
+  }

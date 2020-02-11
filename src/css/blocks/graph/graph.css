@@ -1,0 +1,18 @@
+@import "./__headings/graph__headings.css";
+@import "./__heading/graph__heading.css";
+@import "./__x-axis/graph__x-axis.css";
+@import "./__axis-label/graph__axis-label.css";
+@import "./__rows/graph__rows.css";
+@import "./__row/graph__row.css";
+@import "./__date/graph__date.css";
+@import "./__line/graph__line.css";
+@import "./__value/graph__value.css";
+
+
+.graph {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: row;
+}

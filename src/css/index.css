@@ -1,0 +1,23 @@
+@import "./commons.css";
+
+@import "./blocks/about/about.css";
+
+@import "./blocks/searching/searching.css";
+@import "./blocks/card-list/card-list.css";
+@import "./blocks/card-list/cards/cards.css";
+@import "./blocks/waiting/waiting.css";
+@import "./blocks/nothing/nothing.css";
+@import "./blocks/button/__show-more/button__show-more.css";
+
+.show-more:hover {
+  background-color: var(--clr-white);
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1440px) {
+  /*Тут, видимо, дизайнер решил дописать текста, тк ему некрасиво было*/
+  .about__text:last-of-type::after {
+    display: block;
+    content: " Если хотите, оставьте свои контакты: email и телефон. Так заказчики смогут с вами связаться.";
+  }
+}

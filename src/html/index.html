@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsAnalyzer</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../img/favicon-16x16.png').default%>">
+</head>
+<body>
+    <header class="header root-section">
+        <a  href="./index.html" class="header__logo">NewsAnalyzer</a>
+        <ul class="header__menu">
+            <li class="header__menu-item header__menu-item_active"><a href="./index.html" class="header__menu-link">Главная</a></li>
+            <li class="header__menu-item"><a href="./about-project.html" class="header__menu-link">О проекте</a></li>
+        </ul>
+    </header>
+
+    <section class="searching root-section">
+        <picture >
+            <source srcset="
+            <%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash.png').default%> 1x,
+            <%=require('../img/georgia-de-lotz--UsJoNxLaNo-unsplash@2x.png').default%> 2x">
+            <img class="searching__image" src="<%=require('../img/main-img.png').default%>" alt="Смартфон с примером аналитики в листьях">
+        </picture>
+        <div class="searching__content">
+        <h1 class="heading searching__heading">Что в мире творится?</h1>
+        <p class="text searching__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+        <form class="searching-form" action="#" name="search">
+            <input class="searching-form__input" type="text" name="search-input" placeholder="Введите слово" required>
+            <button class="button searching-form__button" type="submit" name="submitBtn">Искать</button>
+        </form>
+</div>
+    </section>
+
+    <section class="card-list root-section">
+        <div class="waiting"> 
+            <div class="circle-preloader"></div>
+            <p class="text waiting__text">Идет поиск новостей...</p>
+        </div>
+        <div class="nothing">
+            <img class="nothing__image" src="<%=require('../img/not-found.svg').default%>" alt="Грустная лупа">
+            <h3 class="heading nothing__heading">Ничего не найдено</h3>
+            <p class="text nothing__text">К сожалению по вашему запросу ничего не найдено.</p>
+        </div>
+
+
+        <div class="cards">
+            <div class="cards__topline">
+                <h2 class="heading cards__heading">Результаты поиска</h2>
+                <a href="./analytics.html" class="cards__topline-link">
+                    Посмотреть аналитику
+                    <img src="<%=require('../img/arrow-right.svg').default%>" alt="Стрелка" class="cards__topline-arrow">
+                </a>
+            </div>
+
+            <div class="cards__container">
+
+                <!-- ↓↓↓↓↓ FOR USE ↓↓↓↓↓ -->
+
+                <template id="template-card" style="display: none;" class="card">
+                    <img src="" alt="Фото из новости" class="card__picture">
+                    <p class="text card__date"></p>
+                    <h3 class="card__heading"></h3>
+                    <p class="text card__text-content"></p>
+                    <p class="card__source"></p>
+                </template>
+
+                <!-- FOR DEVELOPMENT -->
+
+                <div class="card">
+                    <img src="<%=require('../img/example-image-2.jpg').default%>" alt="Фото из новости" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                            <h3 class="card__heading">Национальное достояние – парки</h3>
+                            <p class="text card__text-content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+                    <p class="card__source">Лента.ру</p>
+                </div>
+                <div class="card">
+                    <img src="<%=require('../img/image_04.png').default%>" alt="Фото из новости" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">Лесные огоньки: история одной фотографии</h3>
+                    <p class="text card__text-content">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного 
+                        из местных чудес природы.</p>
+                    <p class="card__source">Медуза</p>
+                </div>
+                <div class="card">
+                    <img src="<%=require('../img/image_07.png').default%>" alt="Фото из новости" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                    <p class="card__source">Риа</p>
+                </div>
+                <div class="card">
+                    <img src="<%=require('../img/image_07.png').default%>" alt="Фото из новости" class="card__picture">
+                    <p class="text card__date">2 августа, 2019</p>
+                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                    <p class="card__source">Риа</p>
+                </div>
+            </div>
+            <button class="button button__show-more">Показать еще</button>
+        </div>
+    </section>
+
+    <section class="about root-section">
+        <picture>
+            <source srcset="
+            <%=require('../img/Avatar.png').default%> 1x,
+            <%=require('../img/Avatar@2x.png').default%> 2x">
+        <img src="<%=require('../img/Avatar.png').default%>" alt="Фото разработчика" class="about__face">
+        </picture>
+        <div class="about__content">
+            <h2 class="about__heading">Об авторе</h2>
+            <p class="text about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+            <p class="text about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+    </div>
+    </section>
+
+    <footer class="footer root-section">
+        <p class="footer__copyright">© 2019  Tsy</p>
+        <ul class="footer__menu">
+            <li class="footer__menu-item"><a href="./index.html" class="text footer__menu-link">Главная</a></li>
+            <li class="footer__menu-item"><a href="./about-project.html" class="text footer__menu-link">О проекте</a></li>
+            <li class="footer__menu-item"><a href="https://praktikum.yandex.ru/" target="_blank" class="text footer__menu-link">Яндекс.Практикум</a></li>
+        </ul>
+        <ul class="footer__socials">
+            <li class="footer__socials-item"><a href="https://github.com/EugeneTsy/NewsAnalyzer" target="_blank" class="footer__socials-link"><img src="<%=require('../img/github.svg').default%>" alt="Лого гитхаб" class="footer__socials-icon"></a></li>
+            <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="Лого фейсбук" class="footer__socials-icon"></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+    
