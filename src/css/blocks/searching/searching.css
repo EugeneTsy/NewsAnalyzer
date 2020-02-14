@@ -3,3 +3,4 @@
 @import "./__heading/searching__heading.css";
 @import "./__text/searching__text.css";
 @import "./searching-form/searching-form.css";
+@import "./__error/searching__error.css";

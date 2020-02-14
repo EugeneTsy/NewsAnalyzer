@@ -9,6 +9,7 @@
   grid-gap: 56px;
   padding-top: 80px;
   padding-bottom: 80px;
+  background-color: var(--clr-white);
 }
 
 @media screen and (max-width: 1440px) {

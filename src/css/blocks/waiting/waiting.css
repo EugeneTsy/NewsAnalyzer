@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: fit-content;
-  margin: 40px auto 40px;
+  width: 100vw;
+  padding: 40px 0 40px;
+  background-color: var(--clr-light-gray);
 }

@@ -1,4 +1,5 @@
 
+@import "./__link/card__link.css";
 @import "./__picture/card__picture.css";
 @import "./__date/card__date.css";
 @import "./__heading/card__heading.css";
@@ -18,6 +19,7 @@
   transition: all ease-in-out 0.2s;
   box-shadow: none;
   cursor: pointer;
+  word-wrap: break-word;
 }
 
 .card:hover {

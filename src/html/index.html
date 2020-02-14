@@ -26,24 +26,26 @@
         <h1 class="heading searching__heading">Что в мире творится?</h1>
         <p class="text searching__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
         <form class="searching-form" action="#" name="search">
-            <input class="searching-form__input" type="text" name="search-input" placeholder="Введите слово" required>
+            <input class="searching-form__input" type="text" name="searchInput" placeholder="Введите слово" >
+            <span class="searching__error"></span>
             <button class="button searching-form__button" type="submit" name="submitBtn">Искать</button>
         </form>
 </div>
     </section>
 
-    <section class="card-list root-section">
-        <div class="waiting"> 
+
+        <section class="root-section waiting hidden">
             <div class="circle-preloader"></div>
             <p class="text waiting__text">Идет поиск новостей...</p>
-        </div>
-        <div class="nothing">
+    </section>
+
+    <section class="root-section nothing hidden">
             <img class="nothing__image" src="<%=require('../img/not-found.svg').default%>" alt="Грустная лупа">
             <h3 class="heading nothing__heading">Ничего не найдено</h3>
             <p class="text nothing__text">К сожалению по вашему запросу ничего не найдено.</p>
-        </div>
+    </section>
 
-
+    <section class="card-list root-section hidden">
         <div class="cards">
             <div class="cards__topline">
                 <h2 class="heading cards__heading">Результаты поиска</h2>
@@ -54,49 +56,9 @@
             </div>
 
             <div class="cards__container">
-
-                <!-- ↓↓↓↓↓ FOR USE ↓↓↓↓↓ -->
-
-                <template id="template-card" style="display: none;" class="card">
-                    <img src="" alt="Фото из новости" class="card__picture">
-                    <p class="text card__date"></p>
-                    <h3 class="card__heading"></h3>
-                    <p class="text card__text-content"></p>
-                    <p class="card__source"></p>
-                </template>
-
-                <!-- FOR DEVELOPMENT -->
-
-                <div class="card">
-                    <img src="<%=require('../img/example-image-2.jpg').default%>" alt="Фото из новости" class="card__picture">
-                    <p class="text card__date">2 августа, 2019</p>
-                            <h3 class="card__heading">Национальное достояние – парки</h3>
-                            <p class="text card__text-content">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-                    <p class="card__source">Лента.ру</p>
-                </div>
-                <div class="card">
-                    <img src="<%=require('../img/image_04.png').default%>" alt="Фото из новости" class="card__picture">
-                    <p class="text card__date">2 августа, 2019</p>
-                    <h3 class="card__heading">Лесные огоньки: история одной фотографии</h3>
-                    <p class="text card__text-content">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного 
-                        из местных чудес природы.</p>
-                    <p class="card__source">Медуза</p>
-                </div>
-                <div class="card">
-                    <img src="<%=require('../img/image_07.png').default%>" alt="Фото из новости" class="card__picture">
-                    <p class="text card__date">2 августа, 2019</p>
-                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-                    <p class="card__source">Риа</p>
-                </div>
-                <div class="card">
-                    <img src="<%=require('../img/image_07.png').default%>" alt="Фото из новости" class="card__picture">
-                    <p class="text card__date">2 августа, 2019</p>
-                    <h3 class="card__heading">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-                    <p class="text card__text-content">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-                    <p class="card__source">Риа</p>
-                </div>
+                
             </div>
+            <div id="bottomLoader" class="circle-preloader hidden"></div>
             <button class="button button__show-more">Показать еще</button>
         </div>
     </section>
@@ -127,6 +89,18 @@
             <li class="footer__socials-item"><a href="https://www.facebook.com/eugenetsy" target="_blank" class="footer__socials-link"><img src="<%=require('../img/fb.svg').default%>" alt="Лого фейсбук" class="footer__socials-icon"></a></li>
         </ul>
     </footer>
+
+    <template id="templateCard" style="display: none;">
+        <div class="card">
+            <a href="" class="card__link" target="blank">
+                <img src="<%=require('../img/imagePlaceholder.png').default%>" alt="Фото из новости" class="card__picture">
+                <p class="text card__date"></p>
+                <h3 class="card__heading"></h3>
+                <p class="text card__text-content"></p>
+                <p class="card__source"></p>
+            </a>
+            </div>
+    </template>
 </body>
 </html>
 

@@ -8,6 +8,7 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 
 
 module.exports = {
+  devtool: 'inline-source-map',
   entry: {
      index: './src/scripts/index.js',
      about: './src/scripts/about-project.js',
