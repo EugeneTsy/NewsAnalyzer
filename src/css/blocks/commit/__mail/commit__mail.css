@@ -1,0 +1,8 @@
+.commit__mail {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

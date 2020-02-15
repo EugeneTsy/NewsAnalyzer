@@ -6,9 +6,7 @@ import "../css/about-project.css";
 
 
 import "./modules/GithubApi.js";
-import "./components/CommitCardList.js"
-
-
+import "./components/CommitCardList.js";
 
 
 

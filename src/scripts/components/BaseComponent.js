@@ -6,7 +6,6 @@ export class BaseComponent {
 
   _setHandlers (handlers) {
     if (handlers) {
-    console.log(handlers);
       handlers.forEach(({ event, func }) => {
         this.elem.addEventListener(event, func);
       });

@@ -44,7 +44,6 @@
     "babel-polyfill": "6.26.0",
     "core-js": "3.4.1",
     "flickity": "2.2.1",
-    "glidejs": "2.1.0",
-    "swiper": "^5.3.1"
+    "glidejs": "2.1.0"
   }
 }

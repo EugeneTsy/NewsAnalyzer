@@ -1,8 +1,9 @@
+
 import { COMMIT_CONTAINER } from '../constants/AboutDomElements.js';
 import { githubApi } from '../modules/GithubApi.js';
 import { CommitCard } from './CommitCard.js'
-import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm';
-import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm';
+import Glide from '@glidejs/glide';
+import { Breakpoints, Controls } from '@glidejs/glide/dist/glide.modular.esm';
 import { sliderProps } from '../constants/sliderProps.js'
 
 
@@ -26,9 +27,7 @@ export class CommitCardList {
     .then(() => {
       
       const slider = new Glide('.glide', sliderProps).mount({ Breakpoints, Controls })
-      slider.on('run', () => {console.log("hey");
       })
-    })
     .catch(err => console.log(err))
 
   }

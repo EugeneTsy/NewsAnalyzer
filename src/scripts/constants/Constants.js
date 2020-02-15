@@ -1,4 +1,6 @@
 export const INPUT_ERROR = document.querySelector('.searching__error');
+export const SUBMIT_BTN = document.querySelector('.searching-form__button');
+
 
 export const CARDS_SECTION = document.querySelector('.card-list');
 export const NEWS_CARDS_CONTAINER = document.querySelector('.cards__container');

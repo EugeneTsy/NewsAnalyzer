@@ -11,6 +11,8 @@
   animation: pulse 3s ease-out infinite;
 }
 
+
+
 @keyframes pulse {
   0% {
     box-shadow: 
@@ -32,6 +34,10 @@
 
 
 @media screen and (max-width: 768px) {
+  .searching-form__button_moved {
+    margin-top: 60px!important;
+  }
+  
   .searching-form__button {
     position: relative;
     margin-top: 16px;

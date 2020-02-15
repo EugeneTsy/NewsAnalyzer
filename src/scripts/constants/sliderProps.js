@@ -6,7 +6,6 @@ export const sliderProps = {
   startAt: 1,
   perView: 4,
   wrapperSize: 100,
-  draggable: true,
   breakpoints: {
     480: { 
       perView: 1,
