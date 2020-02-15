@@ -1,4 +1,5 @@
 .graph__line {
+  min-width: 24px;
   height: 24px;
   background-color: var(--clr-blue);
 }

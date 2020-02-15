@@ -2,7 +2,7 @@ import { SHOW_MORE_BTN, NEWS_CARDS_CONTAINER, WAITING_BLOCK, NOTHING_BLOCK, CARD
 
 import { dataStorage } from "../modules/DataStorage.js"
 import { searchInput }  from "../components/SearchInput.js";
-import { newsApiPerPage }  from "../modules/NewsApi.js";
+import { newsApi }  from "../modules/NewsApi.js";
 import { NewsCard } from "./NewsCard.js";
 import { BaseComponent } from "./BaseComponent.js";
 
@@ -20,17 +20,18 @@ export class NewsCardList extends BaseComponent {
   }
 
   renderNews (phrase) {
+    while (NEWS_CARDS_CONTAINER.firstChild) {
+      NEWS_CARDS_CONTAINER.removeChild(NEWS_CARDS_CONTAINER.firstChild)
+    }
+    
       NOTHING_BLOCK.classList.add('hidden');
       WAITING_BLOCK.classList.remove('hidden');
 
-      return newsApiPerPage.getNews(phrase, this._page)
+      return newsApi.getNews(phrase, this._page)
       .then(res => {
         this._showReaction(res)
 
       //Чистит список карточек перед повторной загрузкой
-      while (NEWS_CARDS_CONTAINER.firstChild) {
-        NEWS_CARDS_CONTAINER.removeChild(NEWS_CARDS_CONTAINER.firstChild)
-      }
 
       this.addCardsToList(res.articles);
       return res;
@@ -38,7 +39,7 @@ export class NewsCardList extends BaseComponent {
 
       .then(res => {
         //записываем фразу и общее количество упоминаний в хранилишче
-          dataStorage.setItem("firstData", 
+          dataStorage.setItem("total", 
       {
         "phrase": phrase,
         "totalResults": res.totalResults,
@@ -47,14 +48,14 @@ export class NewsCardList extends BaseComponent {
       .catch(err => console.log(err))
   }
 
-  
+
   getMoreNews () {
     this._page++;
 
     LOADER.classList.remove('hidden');
     SHOW_MORE_BTN.classList.add('hidden');
 
-    newsApiPerPage.getNews(searchInput.form.elements.searchInput.value, this._page)
+    newsApi.getNews(searchInput.form.elements.searchInput.value, this._page)
     .then(res => {
       this.addCardsToList(res.articles);
       
@@ -91,6 +92,8 @@ export class NewsCardList extends BaseComponent {
     
     //если новостей меньше 3 — скрываем кнопку «показать еще»
     else if (res.totalResults < 3) {
+      CARDS_SECTION.classList.remove('hidden');
+      WAITING_BLOCK.classList.add('hidden');
       SHOW_MORE_BTN.classList.add('hidden');
     } 
     

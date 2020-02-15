@@ -1,5 +1,5 @@
 import { BaseComponent } from "./BaseComponent.js";
-import { newsApiPerPage }  from "../modules/NewsApi.js"
+import { newsApi }  from "../modules/NewsApi.js"
 import { INPUT_ERROR } from "../constants/Constants.js"
 
 export class SearchInput extends BaseComponent {
@@ -49,7 +49,7 @@ const submit = () => {
   this.validation();
   
   if (this._isValid) {
-    newsApiPerPage.getNews(this.form.elements.searchInput.value)
+    newsApi.getNews(this.form.elements.searchInput.value)
     .then(res => console.log(res)
     )
   }

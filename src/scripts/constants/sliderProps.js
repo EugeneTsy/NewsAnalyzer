@@ -1,8 +1,4 @@
-import Glide from '@glidejs/glide';
-
-import { Breakpoints, Controls } from '@glidejs/glide/dist/glide.modular.esm';
-
-const slider = new Glide('.glide', {
+export const sliderProps = {
   type: 'carousel',
   startAt: 'center',
   peek: 88,
@@ -10,6 +6,7 @@ const slider = new Glide('.glide', {
   startAt: 1,
   perView: 4,
   wrapperSize: 100,
+  draggable: true,
   breakpoints: {
     480: { 
       perView: 1,
@@ -37,5 +34,4 @@ const slider = new Glide('.glide', {
         } },
       1440: { perView: 3 }
     }
-})
-.mount({ Breakpoints, Controls });
+}

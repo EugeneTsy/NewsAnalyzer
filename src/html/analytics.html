@@ -20,10 +20,10 @@
     <span class="breadcrumbs__present">Аналитика</span>
   </div>
 
-  <h2 class="heading you-asked__heading">Вы спросили: «<span id="newsPerWeek" class="you-asked__heading">Путешествия</span>»</h2>
+  <h2 class="heading you-asked__heading">Вы спросили: «<span id="askHeading">Путешествия</span>»</h2>
   <div class="you-asked__stats">
       <p class="you-asked__stats-item">Новостей за неделю: <span id="newsPerWeek" class="you-asked__number">34 324</span></p>
-      <p class="you-asked__stats-item">Упоминаний в заголовках: <span id="menshionsInHeadings" class="you-asked__number">235</span></p>
+      <p class="you-asked__stats-item">Упоминаний в заголовках: <span id="mentionsInHeadings" class="you-asked__number">235</span></p>
     </div>
 </section>
 
@@ -31,7 +31,7 @@
   <h3 class="analytics__heading">Аналитика по дням</h3>
   <div class="graph">
     <div class="graph__headings">
-      <p class="graph__heading">Дата <br>(август)</p>
+      <p class="graph__heading">Дата <br>(<span id="currentMonth">август</span>)</p>
       <p class="graph__heading">Кол-во упоминаний</p>
     </div>
 
@@ -43,26 +43,14 @@
       <span class="graph__axis-label">100</span>
     </div>
 <div class="graph__rows">
-    <template style="display: none;" class="graph__row">
-      <span class="graph__date"></span>
-      <div class="graph__line"><span class="graph__value"></span></div>
+    <template style="display: none;" id="templateRow">
+      <div class="graph__row">
+        <span class="graph__date"></span>
+        <div class="graph__line"><span class="graph__value"></span></div>
+    </div>
     </template>
 
-        <!-- FOR DEVELOPMENT -->
-      <div class="graph__row">
-        <span class="graph__date">19, пн</span>
-        <div class="graph__line"><span class="graph__value">15</span></div>
-      </div>
-      <div class="graph__row">
-        <span class="graph__date">20, вт</span>
-        <div class="graph__line"><span class="graph__value">18</span></div>
-      </div><div class="graph__row">
-        <span class="graph__date">21, ср</span>
-        <div class="graph__line"><span class="graph__value">73</span></div>
-      </div><div class="graph__row">
-        <span class="graph__date">22, чт</span>
-        <div class="graph__line"><span class="graph__value">39</span></div>
-      </div>
+
     </div>
 
     <div class="graph__x-axis">

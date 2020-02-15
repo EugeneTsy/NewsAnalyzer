@@ -1,6 +1,6 @@
 import { BaseComponent } from './BaseComponent.js';
 import { LINK_REGEXP } from '../constants/Constants.js';
-
+import { timeMashine } from "./Date.js"
 
 
 export class NewsCard extends BaseComponent {
@@ -20,8 +20,10 @@ export class NewsCard extends BaseComponent {
     if (emptyHttps.test(this.obj.urlToImage) === true || (this.obj.urlToImage === null)) {
       cardTemplate.querySelector('.card__picture').src = 'src/img/imagePlaceholder@2x.png';
     } else {cardTemplate.querySelector('.card__picture').src = this.obj.urlToImage;}
-    cardTemplate.querySelector('.card__date').textContent = this._getNormalTime(this.obj.publishedAt);
+
+    cardTemplate.querySelector('.card__date').textContent = timeMashine.getNormalTime();
     cardTemplate.querySelector('.card__heading').textContent = this.obj.title;
+    timeMashine.date = this.obj.publishedAt;
     cardTemplate.querySelector('.card__text-content').textContent = this._breakLongWords(this.obj.description);
     cardTemplate.querySelector('.card__source').textContent = this.obj.source.name;
     cardTemplate.querySelector('.card__link').href = this.obj.url;

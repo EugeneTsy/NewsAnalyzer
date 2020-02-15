@@ -1,5 +1,5 @@
 import { BaseComponent } from "./BaseComponent.js";
-import { newsApiPerPage }  from "../modules/NewsApi.js";
+import { newsApi }  from "../modules/NewsApi.js";
 import { INPUT_ERROR, NEWS_CARDS_CONTAINER, WAITING_BLOCK, CARDS_SECTION } from "../constants/Constants.js";
 import { NewsCard } from "./NewsCard.js";
 import { cardList } from "./NewsCardList.js";

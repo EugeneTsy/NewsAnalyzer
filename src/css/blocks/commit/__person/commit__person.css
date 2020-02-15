@@ -1,8 +1,0 @@
-
-.commit__person {
-  display: grid;
-  grid-template-columns: 64px calc(100% - 80px);
-  grid-column-gap: 16px;
-  min-width: 0;
-  margin: 16px 0 16px;
-}

@@ -7,7 +7,7 @@ class GithubApi {
   getResponseJson(res) {
     if (res.ok) {
       return res.json()
-    } else return Promise.reject(res.status);
+    } else return Promise.reject({"Error": res.status, "Reason": res.statusText});
   }
   
   getAllCommits () {
@@ -17,3 +17,5 @@ class GithubApi {
   .then(res => this.getResponseJson(res))
 }
 }
+
+export const githubApi = new GithubApi();

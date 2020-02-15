@@ -1,35 +1,30 @@
 
 class NewsApi {
   constructor (sort, endPoint, pageSize, lang, period) {
-    this._key = 'e3dcf54d028f419f9c6b74d20ed89315';
+    this._key = '4decb7a7a68241a687e7c0785950370c';
     this.url = 'https://newsapi.org/v2/';
     this.endPoint = endPoint + '?';
     this.sort = `sortBy=${sort}`;
     this.pageSize = `pageSize=${pageSize}`;
     this.language = `language=${lang}`;
-    this.period = period;
-    this.period = this._calculatingPeriod()
+    this.period = this._calculatingPeriod(period)
   }
-
-  
-  // `from=${_calcPeriod()}`
 
   getResponseJson(res) {
     if (res.ok) {
       return res.json()
-    } else return Promise.reject(res.status);
+    } else return Promise.reject(reason);
   }
   
-  getNews (word, page) {
+  getNews (phrase, page) {
 
   let pageRequire = "";
   if (page) {pageRequire = `page=${page}&`};
     
-
-  return fetch(
+  return fetch (
     this.url + 
     this.endPoint + 
-    `q=${word}&` + 
+    `q=${phrase}&` + 
     this.sort + '&' + 
     this.pageSize + '&' + 
     pageRequire + 
@@ -39,20 +34,37 @@ class NewsApi {
     {
     method: 'GET',
     headers: {
-      Authorization: this._key
-    },
+      Authorization: this._key,
+    }
   })
   .then(res => this.getResponseJson(res))
 }
 
-  _calculatingPeriod () {
+  getAnalytics (phrase, dateFrom, dateTo) {
+
+    return fetch (
+      this.url + 
+      this.endPoint + 
+      `qInTitle=${phrase}&` + 
+      this.language + '&' + 
+      `from=${dateFrom}&`+
+      `to=${dateTo}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: this._key,
+        }
+    })
+    .then(res => this.getResponseJson(res))
+  }
+
+  _calculatingPeriod (period) {
     let date = new Date()
-    date.setDate(date.getDate() - this.period);
+    date.setDate(date.getDate() - period);
     
     return date.toISOString();
 }
 }
 
 
-export const newsApiPerPage = new NewsApi('relevancy', 'everything', 3, 'ru', 7);
-export const newsApiAll = new NewsApi('relevancy', 'top-headlines', 100, 'ru', 7);
+export const newsApi = new NewsApi('relevancy', 'everything', 3, 'ru', 7);
