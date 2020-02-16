@@ -2,7 +2,7 @@ import { BaseComponent } from "./BaseComponent.js";
 import { newsApi }  from "../modules/NewsApi.js";
 import { INPUT_ERROR, SUBMIT_BTN } from "../constants/Constants.js";
 import { NewsCard } from "./NewsCard.js";
-import { cardList } from "./NewsCardList.js";
+import { cardList } from "../index.js";
 
 export class SearchInput extends BaseComponent {
   constructor(handlers, form) {
@@ -60,7 +60,7 @@ export class SearchInput extends BaseComponent {
 
       
       cardList.renderNews(this.form.elements.searchInput.value)
-      .then(() => {
+      .finally(() => {
         this.form.searchInput.disabled = false
         this.form.submitBtn.disabled = false
       })
@@ -75,16 +75,3 @@ export class SearchInput extends BaseComponent {
 }
 
 
-
-
-
-
-export const searchInput = new SearchInput(
-//   [
-//   {
-//     elem: input.form.elements.searchInput,
-//     event: 'input',
-//     func: input.validation(),
-//   }
-// ],
- false, document.forms.search);

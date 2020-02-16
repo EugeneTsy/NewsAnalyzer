@@ -1,4 +1,5 @@
 export const INPUT_ERROR = document.querySelector('.searching__error');
+export const SEARCHING_FORM = document.forms.search;
 export const SUBMIT_BTN = document.querySelector('.searching-form__button');
 
 

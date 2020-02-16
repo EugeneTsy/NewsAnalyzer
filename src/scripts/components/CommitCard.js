@@ -10,8 +10,13 @@ export class CommitCard extends BaseComponent {
   }
 
   createCard () {
+
+    
     commitLink.href = this.commit.html_url;
-    commitDate.textContent = timeMashine.getNormalTime(this.commit.commit.author.date);
+
+    timeMashine.date = this.commit.commit.author.date;
+    commitDate.textContent = timeMashine.getNormalTime();
+    
     commitAvatar.src = this.commit.author.avatar_url;
     commitName.textContent = this.commit.commit.author.name;
     commitMail.textContent = this.commit.commit.author.email;

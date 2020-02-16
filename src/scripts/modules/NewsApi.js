@@ -1,9 +1,9 @@
 
 class NewsApi {
   constructor (sort, endPoint, pageSize, lang, period) {
-    this._key = '4decb7a7a68241a687e7c0785950370c';
+    this._key = '453b5fa08d484aa3a6bf86ab4c2a2e99';
     this.url = 'https://newsapi.org/v2/';
-    this.endPoint = endPoint + '?';
+    this.endPoint = endPoint;
     this.sort = `sortBy=${sort}`;
     this.pageSize = `pageSize=${pageSize}`;
     this.language = `language=${lang}`;
@@ -23,7 +23,7 @@ class NewsApi {
     
   return fetch (
     this.url + 
-    this.endPoint + 
+    this.endPoint + '?' + 
     `q=${phrase}&` + 
     this.sort + '&' + 
     this.pageSize + '&' + 
@@ -44,7 +44,7 @@ class NewsApi {
 
     return fetch (
       this.url + 
-      this.endPoint + 
+      this.endPoint + '?' + 
       `qInTitle=${phrase}&` + 
       this.language + '&' + 
       `from=${dateFrom}&`+
@@ -59,7 +59,7 @@ class NewsApi {
   }
 
   _calculatingPeriod (period) {
-    let date = new Date()
+    const date = new Date()
     date.setDate(date.getDate() - period);
     
     return date.toISOString();

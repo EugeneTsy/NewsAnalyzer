@@ -16,9 +16,9 @@ export class CommitCardList {
   renderCommits () {
 
     githubApi.getAllCommits()
-    .then(res => {
+    .then(commits => {
 
-        res.forEach(commit => {
+      commits.forEach(commit => {
           const commitCard = new CommitCard(commit).createCard();
           COMMIT_CONTAINER.appendChild(commitCard);
         })

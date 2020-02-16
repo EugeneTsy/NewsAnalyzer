@@ -33,18 +33,6 @@ export class NewsCard extends BaseComponent {
     return cardElement;
   }
 
-_getNormalTime (dirtyTime) {
-  const time = new Date(dirtyTime);
-
-  const year = time.getFullYear();
-  const month = time.getMonth();
-  const day = time.getDate();
-
-  const months = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря",]
-  
-  return `${day} ${months[month]}, ${year}`;
-}
-
 
   _breakLongWords (string) {
     const wordLength = 25;

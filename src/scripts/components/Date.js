@@ -38,7 +38,7 @@ export class TtimeMashine {
 
 
   getDateNDaysAgo (nDaysAgo) {
-    let date = new Date(this.date);
+    const date = new Date(this.date);
 
     date.setDate(date.getDate() - nDaysAgo);
     return new Date(date)
@@ -46,7 +46,7 @@ export class TtimeMashine {
   
 
   getDatesForPeriod (period) {
-    let dates = [];
+    const dates = [];
     
     for (let i = (period -1); i >= 0; i--) {
       dates.push(this.getDateNDaysAgo(i));
