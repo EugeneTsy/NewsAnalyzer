@@ -1,7 +1,7 @@
 
-class NewsApi {
+export class NewsApi {
   constructor (sort, endPoint, pageSize, lang, period) {
-    this._key = '453b5fa08d484aa3a6bf86ab4c2a2e99';
+    this._key = '06ff710b3a33453d91b1a04e2f52acaf';
     this.url = 'https://newsapi.org/v2/';
     this.endPoint = endPoint;
     this.sort = `sortBy=${sort}`;
@@ -16,18 +16,14 @@ class NewsApi {
     } else return Promise.reject(reason);
   }
   
-  getNews (phrase, page) {
+  getNews (phrase) {
 
-  let pageRequire = "";
-  if (page) {pageRequire = `page=${page}&`};
-    
   return fetch (
     this.url + 
     this.endPoint + '?' + 
-    `q=${phrase}&` + 
-    this.sort + '&' + 
     this.pageSize + '&' + 
-    pageRequire + 
+    this.sort + '&' + 
+    `q=${phrase}&` + 
     this.language + '&' + 
     `from=${this.period}`,
     
@@ -65,6 +61,3 @@ class NewsApi {
     return date.toISOString();
 }
 }
-
-
-export const newsApi = new NewsApi('relevancy', 'everything', 3, 'ru', 7);

@@ -3,8 +3,9 @@ import { SEARCHING_FORM, SHOW_MORE_BTN, NEWS_CARDS_CONTAINER, WAITING_BLOCK, NOT
 import { BaseComponent } from "./BaseComponent.js";
 import { dataStorage } from "../modules/DataStorage.js";
 import { searchInput }  from "../index.js";
-import { newsApi }  from "../modules/NewsApi.js";
+import { newsApi } from "../index.js";
 import { NewsCard } from "./NewsCard.js";
+import { data } from "flickity";
 
 export class NewsCardList extends BaseComponent {
   
@@ -15,7 +16,9 @@ export class NewsCardList extends BaseComponent {
 
     this._HANDLERS();
 
-    this._page = 1;
+    this._page = 0;
+    this._articles = [];
+    this._articlesPerPage = [];
   }
 
 
@@ -23,7 +26,8 @@ export class NewsCardList extends BaseComponent {
 
 
 
-  alternateRender (phrase) {
+  alternateRender (phrase, isLocal) {
+    
       //Чистит список карточек перед повторной загрузкой
       while (NEWS_CARDS_CONTAINER.firstChild) {
         NEWS_CARDS_CONTAINER.removeChild(NEWS_CARDS_CONTAINER.firstChild)
@@ -32,20 +36,36 @@ export class NewsCardList extends BaseComponent {
         NOTHING_BLOCK.classList.add('hidden');
         WAITING_BLOCK.classList.remove('hidden');
 
+        
           //Это нужно, чтобы загрузить новости из локального хранилща при загрузке страницы
       if (isLocal) {
         CARDS_SECTION.classList.remove('hidden');
         WAITING_BLOCK.classList.add('hidden');
       
         SEARCHING_FORM.elements.searchInput.value = dataStorage.getItem("phrase");
-        return this.addCardsToList(dataStorage.getItem("articles"));
+        return this.addCardsToList(dataStorage.getItem("renderedNews"));
     } 
 
-    return newsApi.getNews(phrase, this._page)
-      .then(res => {
-        this._showReaction(res)
+    return newsApi.getNews(phrase)
+    .then(res => {
+      this._showReaction(res)
 
-        this.addCardsToList(res.articles);
+      this._articles = res.articles;
+      
+      //Сохраняю весь результат в хранилище
+      dataStorage.setData(
+        {
+        "phrase": phrase,
+        "totalResults": res.totalResults,
+        "articles": this._articles,
+        })
+
+
+        this._articlesPerPage = this._pageSeparate(this._articles);
+        dataStorage.setData({"renderedNews": this._articlesPerPage[this._page]});
+        
+        this.addCardsToList(this._articlesPerPage[this._page]);
+
         return res;
       })
     
@@ -53,7 +73,25 @@ export class NewsCardList extends BaseComponent {
 
 
 
+  _pageSeparate(articles, pageSize = 3) {
+    const result = [];
+    let currentPageNumber = 0;
 
+    for(let article of articles) {
+      const currentPage = result[currentPageNumber];
+
+      if (currentPage && currentPage.length < pageSize) {
+        currentPage.push(article);
+      } else {
+        if (result.length > 0) {
+          currentPageNumber += 1;
+        }
+        result[currentPageNumber] = [article];
+      } 
+    }
+
+    return result;
+  }
 
 
 
@@ -79,7 +117,7 @@ export class NewsCardList extends BaseComponent {
     } else
 
       //А если в локале ничего нет, то запросить
-      return newsApi.getNews(phrase, this._page)
+      return newsApi.getNews(phrase)
       .then(res => {
         this._showReaction(res)
 
@@ -98,6 +136,30 @@ export class NewsCardList extends BaseComponent {
             })
     })
       .catch(err => console.log(err))
+  }
+
+
+  addMoreNews() {
+    this._page++;
+
+    LOADER.classList.remove('hidden');
+    SHOW_MORE_BTN.classList.add('hidden');
+
+    if (this._articlesPerPage[this._page]) {
+      this.addCardsToList(this._articlesPerPage[this._page]);
+    } else
+    
+    console.log(this._page, this._articles);
+    this.addCardsToList(this._articles[this._page]);
+    LOADER.classList.add('hidden');
+    SHOW_MORE_BTN.classList.remove('hidden');
+
+
+    const savedData = dataStorage.getItem("renderedNews");
+    const newData = savedData.concat(this._articlesPerPage[this._page]);
+    console.log('here');
+    
+    dataStorage.setData({"renderedNews": newData})
   }
 
 
@@ -165,6 +227,6 @@ export class NewsCardList extends BaseComponent {
   }
 
   _HANDLERS () {
-    SHOW_MORE_BTN.addEventListener('click', () => this.getMoreNews())
+    SHOW_MORE_BTN.addEventListener('click', () => this.addMoreNews())
   }
 }

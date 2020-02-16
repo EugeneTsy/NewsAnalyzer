@@ -1,7 +1,7 @@
 import { ASK_HEADING, NEWS_IN_WEEK, MENTIONS, CURRENT_MONTH, GRAPH_ROWS, } from "../constants/Constants.js"
 import { timeMashine } from "./Date.js"
 
-import { newsApi }  from "../modules/NewsApi.js";
+import { newsApi }  from "../index.js";
 import { dataStorage } from "../modules/DataStorage.js"
 
 

@@ -1,5 +1,4 @@
 import { BaseComponent } from "./BaseComponent.js";
-import { newsApi }  from "../modules/NewsApi.js";
 import { INPUT_ERROR, SUBMIT_BTN } from "../constants/Constants.js";
 import { NewsCard } from "./NewsCard.js";
 import { cardList } from "../index.js";
@@ -59,7 +58,7 @@ export class SearchInput extends BaseComponent {
       this.form.submitBtn.setAttribute("disabled", "disabled");
 
       
-      cardList.renderNews(this.form.elements.searchInput.value)
+      cardList.alternateRender(this.form.elements.searchInput.value)
       .finally(() => {
         this.form.searchInput.disabled = false
         this.form.submitBtn.disabled = false
