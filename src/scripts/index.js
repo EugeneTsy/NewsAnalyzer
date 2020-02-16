@@ -20,8 +20,8 @@ export const searchInput = new SearchInput(false, document.forms.search);
 export const cardList = new NewsCardList([], constants.NEWS_CARDS_CONTAINER);
 
 
-// cardList.alternateRender("молоко", false)
+// cardList.renderNews("молоко", false)
 
 if (dataStorage.getItem("articles")) {
-  cardList.alternateRender("", true);
+  cardList.renderNews("", true);
 } 

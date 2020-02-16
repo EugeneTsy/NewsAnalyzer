@@ -66,7 +66,7 @@ export class Statistics {
   }
 
   _setToHeading() {
-    console.log(this.phrase);
+    
     
     ASK_HEADING.textContent = this.phrase[0].toUpperCase() + this.phrase.slice(1); //Вставляем, делая с большой буквы
     NEWS_IN_WEEK.textContent = this.total;

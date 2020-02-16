@@ -58,7 +58,7 @@ export class SearchInput extends BaseComponent {
       this.form.submitBtn.setAttribute("disabled", "disabled");
 
       
-      cardList.alternateRender(this.form.elements.searchInput.value)
+      cardList.renderNews(this.form.elements.searchInput.value, false)
       .finally(() => {
         this.form.searchInput.disabled = false
         this.form.submitBtn.disabled = false

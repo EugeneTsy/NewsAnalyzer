@@ -16,7 +16,7 @@ export class NewsCardList extends BaseComponent {
 
     this._HANDLERS();
 
-    this._page = 0;
+    this._page;
     this._articles = [];
     this._articlesPerPage = [];
   }
@@ -26,48 +26,55 @@ export class NewsCardList extends BaseComponent {
 
 
 
-  alternateRender (phrase, isLocal) {
+  renderNews (phrase, isLocal) {
     
       //Чистит список карточек перед повторной загрузкой
       while (NEWS_CARDS_CONTAINER.firstChild) {
         NEWS_CARDS_CONTAINER.removeChild(NEWS_CARDS_CONTAINER.firstChild)
       }
-      
         NOTHING_BLOCK.classList.add('hidden');
         WAITING_BLOCK.classList.remove('hidden');
 
         
-          //Это нужно, чтобы загрузить новости из локального хранилща при загрузке страницы
+      //Это нужно, чтобы загрузить новости из локального хранилища при загрузке страницы
       if (isLocal) {
         CARDS_SECTION.classList.remove('hidden');
         WAITING_BLOCK.classList.add('hidden');
       
         SEARCHING_FORM.elements.searchInput.value = dataStorage.getItem("phrase");
+        
+        
+        this._articlesPerPage = this._pageSeparate(dataStorage.getItem("articles"));
+        this._page = dataStorage.getItem("page")
+        
         return this.addCardsToList(dataStorage.getItem("renderedNews"));
     } 
+    else return newsApi.getNews(phrase)
+      .then(res => {
 
-    return newsApi.getNews(phrase)
-    .then(res => {
-      this._showReaction(res)
+        this._page = 0;
+        this._showReaction(res)
 
-      this._articles = res.articles;
-      
-      //Сохраняю весь результат в хранилище
-      dataStorage.setData(
-        {
-        "phrase": phrase,
-        "totalResults": res.totalResults,
-        "articles": this._articles,
-        })
-
-
-        this._articlesPerPage = this._pageSeparate(this._articles);
-        dataStorage.setData({"renderedNews": this._articlesPerPage[this._page]});
+        this._articles = res.articles;
         
-        this.addCardsToList(this._articlesPerPage[this._page]);
+        
+        //Сохраняю весь результат в хранилище
+        dataStorage.setData(
+          {
+          "phrase": phrase,
+          "totalResults": res.totalResults,
+          "articles": this._articles,
+          "page": this._page,
+          })
 
-        return res;
-      })
+
+          this._articlesPerPage = this._pageSeparate(this._articles);
+          dataStorage.setData({"renderedNews": this._articlesPerPage[this._page]});
+          
+          this.addCardsToList(this._articlesPerPage[this._page]);
+
+          return res;
+        })
     
   }
 
@@ -93,114 +100,44 @@ export class NewsCardList extends BaseComponent {
     return result;
   }
 
+  getMoreNews() {
 
-
-
-
-  renderNews (phrase, isLocal) {
-    //Чистит список карточек перед повторной загрузкой
-    while (NEWS_CARDS_CONTAINER.firstChild) {
-      NEWS_CARDS_CONTAINER.removeChild(NEWS_CARDS_CONTAINER.firstChild)
-    }
     
-      NOTHING_BLOCK.classList.add('hidden');
-      WAITING_BLOCK.classList.remove('hidden');
-
-      
-      //Это нужно, чтобы загрузить новости из локального хранилща при загрузке страницы
-      if (isLocal) {
-        CARDS_SECTION.classList.remove('hidden');
-        WAITING_BLOCK.classList.add('hidden');
-      
-        SEARCHING_FORM.elements.searchInput.value = dataStorage.getItem("phrase");
-        return this.addCardsToList(dataStorage.getItem("articles"));
-    } else
-
-      //А если в локале ничего нет, то запросить
-      return newsApi.getNews(phrase)
-      .then(res => {
-        this._showReaction(res)
-
-        this.addCardsToList(res.articles);
-        return res;
-      })
-
-      .then(res => {
-        //записываем фразу и общее количество упоминаний в хранилишче
-
-          dataStorage.setData(
-            {
-            "phrase": phrase,
-            "totalResults": res.totalResults,
-            "articles": res.articles,
-            })
-    })
-      .catch(err => console.log(err))
-  }
-
-
-  addMoreNews() {
     this._page++;
+    
 
     LOADER.classList.remove('hidden');
     SHOW_MORE_BTN.classList.add('hidden');
 
-    if (this._articlesPerPage[this._page]) {
-      this.addCardsToList(this._articlesPerPage[this._page]);
-    } else
     
-    console.log(this._page, this._articles);
-    this.addCardsToList(this._articles[this._page]);
+
+    this.addCardsToList(this._articlesPerPage[this._page]);
+    
+    const savedData = dataStorage.getItem("renderedNews");
+
+
+    const newData = savedData.concat(this._articlesPerPage[this._page]);
+    
+    dataStorage.setData(
+      {
+        "renderedNews": newData,
+        "page": this._page,
+      }
+      )
     LOADER.classList.add('hidden');
     SHOW_MORE_BTN.classList.remove('hidden');
 
-
-    const savedData = dataStorage.getItem("renderedNews");
-    const newData = savedData.concat(this._articlesPerPage[this._page]);
-    console.log('here');
-    
-    dataStorage.setData({"renderedNews": newData})
   }
 
-
-  getMoreNews () {
-    this._page++;
-
-    LOADER.classList.remove('hidden');
-    SHOW_MORE_BTN.classList.add('hidden');
-
-    newsApi.getNews(searchInput.form.elements.searchInput.value, this._page)
-    .then(res => {
-      this.addCardsToList(res.articles);
-      
-      LOADER.classList.add('hidden');
-      SHOW_MORE_BTN.classList.remove('hidden');
-
-      const savedArticles = dataStorage.getItem("articles").concat(res.articles);
-      dataStorage.setData({"articles": savedArticles})
-      console.log(savedArticles);
-      
-      
-
-      return res
-    })
-    .then(res => {
-      //Это нужно чтобы если новости кончились — не показывать кнопку «показать еще»
-      if (this._page > Math.round((res.totalResults / 3))) {
-        SHOW_MORE_BTN.classList.add('hidden');
-      } else return res
-    })
-
-    .catch(err => console.log(err))
-
-  }
 
   addCardsToList (articles) {
-    return articles.forEach(article => {
-      const card = new NewsCard(article);
-      NEWS_CARDS_CONTAINER.appendChild(card.createCard())
-      
-    })
+    if (articles) {
+      return articles.forEach(article => {
+        const card = new NewsCard(article);
+        NEWS_CARDS_CONTAINER.appendChild(card.createCard())
+      })
+    } else return console.log('Статей нет');
+    
   }
 
 
@@ -227,6 +164,6 @@ export class NewsCardList extends BaseComponent {
   }
 
   _HANDLERS () {
-    SHOW_MORE_BTN.addEventListener('click', () => this.addMoreNews())
+    SHOW_MORE_BTN.addEventListener('click', () => this.getMoreNews())
   }
 }
