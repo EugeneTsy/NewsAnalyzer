@@ -3,3 +3,7 @@
   height: 24px;
   background-color: var(--clr-blue);
 }
+
+.graph__line_empty {
+  background-color: var(--clr-gray);
+}

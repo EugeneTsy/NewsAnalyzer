@@ -1,63 +1,53 @@
-
 export class NewsApi {
-  constructor (sort, endPoint, pageSize, lang, period) {
-    this._key = '06ff710b3a33453d91b1a04e2f52acaf';
-    this.url = 'https://newsapi.org/v2/';
-    this.endPoint = endPoint;
+  constructor(sort, pageSize, lang, period) {
+    this._key = "06ff710b3a33453d91b1a04e2f52acaf";
+    this.url = "https://newsapi.org/v2/";
+    this.endPoint = "everything";
     this.sort = `sortBy=${sort}`;
     this.pageSize = `pageSize=${pageSize}`;
     this.language = `language=${lang}`;
-    this.period = this._calculatingPeriod(period)
+    this.period = this._calculatingPeriod(period);
   }
 
   getResponseJson(res) {
     if (res.ok) {
-      return res.json()
-    } else return Promise.reject(reason);
+      return res.json();
+    } else return Promise.reject("Что-то пошло не так :(");
   }
-  
-  getNews (phrase) {
 
-  return fetch (
-    this.url + 
-    this.endPoint + '?' + 
-    this.pageSize + '&' + 
-    this.sort + '&' + 
-    `q=${phrase}&` + 
-    this.language + '&' + 
-    `from=${this.period}`,
-    
-    {
-    method: 'GET',
-    headers: {
-      Authorization: this._key,
-    }
-  })
-  .then(res => this.getResponseJson(res))
-}
+  getNews(phrase, inTitle) {
+    let howToSearch;
 
-  getAnalytics (phrase, dateFrom, dateTo) {
+    if (inTitle) {
+      howToSearch = `q=${phrase}&`;
+    } else howToSearch = `qInTitle=${phrase}&`;
 
-    return fetch (
-      this.url + 
-      this.endPoint + '?' + 
-      `qInTitle=${phrase}&` + 
-      this.language + '&' + 
-      `from=${dateFrom}&`+
-      `to=${dateTo}`,
+    return fetch(
+      this.url +
+        this.endPoint +
+        "?" +
+        this.pageSize +
+        "&" +
+        this.sort +
+        "&" +
+        howToSearch +
+        this.language +
+        "&" +
+        `from=${this.period}`,
+
       {
-        method: 'GET',
+        method: "GET",
         headers: {
-          Authorization: this._key,
+          Authorization: this._key
         }
-    })
-    .then(res => this.getResponseJson(res))
+      }
+    ).then(res => this.getResponseJson(res));
   }
 
-  _calculatingPeriod (period) {
-    const date = new Date()
+  _calculatingPeriod(period) {
+    const date = new Date();
     date.setDate(date.getDate() - period);
-    
+
     return date.toISOString();
-}
+  }
 }

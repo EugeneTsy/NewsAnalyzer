@@ -1,22 +1,28 @@
-import { BaseComponent } from './BaseComponent.js';
-import { commitTemplate, commitLink, commitDate, commitAvatar, commitName, commitMail, commitMessage } from "../constants/AboutDomElements"
-import { timeMashine } from './Date.js'
+import { BaseComponent } from "./BaseComponent.js";
+import {
+  commitTemplate,
+  commitLink,
+  commitDate,
+  commitAvatar,
+  commitName,
+  commitMail,
+  commitMessage
+} from "../constants/AboutDomElements";
+import { timeMashine } from "./Date.js";
 
 export class CommitCard extends BaseComponent {
-  constructor( commit) {
+  constructor(commit) {
     super();
     this.commit = commit;
     this.createCard();
   }
 
-  createCard () {
-
-    
+  createCard() {
     commitLink.href = this.commit.html_url;
 
     timeMashine.date = this.commit.commit.author.date;
     commitDate.textContent = timeMashine.getNormalTime();
-    
+
     commitAvatar.src = this.commit.author.avatar_url;
     commitName.textContent = this.commit.commit.author.name;
     commitMail.textContent = this.commit.commit.author.email;
@@ -26,4 +32,3 @@ export class CommitCard extends BaseComponent {
     return cardElement;
   }
 }
-

@@ -1,0 +1,16 @@
+.error__popup {
+  padding: 24px;
+  border-radius: 4px;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  position: fixed;
+  left: 16px;
+  opacity: 0;
+  bottom: 0;
+  transition: .35s ease-in-out;
+}
+
+.error__popup_shown {
+  opacity: 1;
+  bottom: 16px;
+}
