@@ -1,4 +1,4 @@
-import { errorPopup } from "../utils/ErrorPopup.js";
+import { errorPopup } from "../../utils/ErrorPopup.js";
 
 class GithubApi {
   constructor() {

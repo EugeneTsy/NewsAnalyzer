@@ -1,4 +1,4 @@
-import { BaseComponent } from "./BaseComponent.js";
+import { BaseComponent } from "../BaseComponent.js";
 import {
   commitTemplate,
   commitLink,
@@ -7,14 +7,13 @@ import {
   commitName,
   commitMail,
   commitMessage
-} from "../constants/AboutDomElements";
-import { timeMashine } from "./Date.js";
+} from "../../constants/AboutDomElements";
+import { timeMashine } from "../Date.js";
 
 export class CommitCard extends BaseComponent {
   constructor(commit) {
     super();
     this.commit = commit;
-    this.createCard();
   }
 
   createCard() {

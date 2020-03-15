@@ -6,13 +6,14 @@ import {
   NOTHING_BLOCK,
   CARDS_SECTION,
   LOADER
-} from "../constants/Constants.js";
+} from "../../constants/Constants.js";
 
-import { BaseComponent } from "./BaseComponent.js";
-import { dataStorage } from "../modules/DataStorage.js";
-import { newsApi } from "../index.js";
-import { NewsCard } from "./NewsCard.js";
-import { errorPopup } from "../utils/ErrorPopup.js";
+import { BaseComponent } from "../BaseComponent.js";
+import { dataStorage } from "../../modules/DataStorage.js";
+import { newsApi, newsCard } from "../../index.js";
+import { errorPopup } from "../../utils/ErrorPopup.js";
+
+
 
 export class NewsCardList extends BaseComponent {
   constructor(handlers, container, phrase) {
@@ -138,8 +139,8 @@ export class NewsCardList extends BaseComponent {
   addCardsToList(articles) {
     if (articles) {
       return articles.forEach(article => {
-        const card = new NewsCard(article);
-        NEWS_CARDS_CONTAINER.appendChild(card.createCard());
+        newsCard.obj = article;
+        NEWS_CARDS_CONTAINER.appendChild(newsCard.createCard());
       });
     } else return;
   }

@@ -1,11 +1,10 @@
-import { BaseComponent } from "./BaseComponent.js";
-import { timeMashine } from "./Date.js";
+import { BaseComponent } from "../BaseComponent.js";
+import { timeMashine } from "../Date.js";
 
 export class NewsCard extends BaseComponent {
   constructor(obj) {
     super();
     this.obj = obj;
-    this.createCard();
   }
 
   createCard() {

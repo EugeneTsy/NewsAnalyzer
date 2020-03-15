@@ -18,8 +18,6 @@ export class Statistics {
     this.articles = dataStorage.getItem("articles");
     this.period = period;
 
-    this._setToTop();
-    this._showStatistics();
   }
 
   _countArticles(date) {
@@ -35,7 +33,7 @@ export class Statistics {
     return countOfArticles;
   }
 
-  _showStatistics() {
+  showStatistics() {
     CURRENT_MONTH.textContent = timeMashine.getMonthAsText(); //Возвращает дату в формате «01, янв»
     const dates = timeMashine.getDatesForPeriod(this.period).reverse(); // Возвращает массив дат за период от сегодня
 
@@ -73,7 +71,7 @@ export class Statistics {
     }
   }
 
-  _setToTop() {
+  setToTop() {
     ASK_HEADING.textContent =
       this.phrase[0].toUpperCase() + this.phrase.slice(1); //Вставляем, делая с большой буквы
     NEWS_IN_WEEK.textContent = this.total;
