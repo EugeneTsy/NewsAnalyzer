@@ -1,4 +1,5 @@
 @import "./__date/commit__date.css";
+@import "./__link/commit__link.css";
 @import "./__person/commit__person.css";
 @import "./__photo/commit__photo.css";
 @import "./__name/commit__name.css";

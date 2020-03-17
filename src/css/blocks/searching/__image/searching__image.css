@@ -1,6 +1,5 @@
 .searching__image {
   position: absolute;
-  display: block;
   left: 0;
   z-index: -1;
   object-fit: cover;

@@ -4,6 +4,7 @@
   border-radius: 16px;
   padding: 24px;
   transition: all ease-in-out 0.2s;
+  height: auto;
 }
 
 .glide__slide:hover {

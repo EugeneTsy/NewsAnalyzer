@@ -4,11 +4,14 @@
   position: absolute;
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   right: 0;
+  top: 0;
 }
 
 .searching-form__button:focus {
   animation: pulse 3s ease-out infinite;
 }
+
+
 
 @keyframes pulse {
   0% {
@@ -31,6 +34,10 @@
 
 
 @media screen and (max-width: 768px) {
+  .searching-form__button_moved {
+    margin-top: 60px!important;
+  }
+  
   .searching-form__button {
     position: relative;
     margin-top: 16px;

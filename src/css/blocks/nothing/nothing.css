@@ -4,11 +4,11 @@
 .nothing {
   display: flex;
   flex-flow: column;
+  width: 100vw;
   align-items: center;
-  width: fit-content;
   margin: auto;
-  max-width: 356px;
-  margin: 40px auto 40px;
+  padding: 40px 0 40px;
+  background-color: var(--clr-light-gray);
 }
 
 
